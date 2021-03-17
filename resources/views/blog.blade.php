@@ -31,7 +31,7 @@
                         <article class="blog_item">
                             <div class="blog_item_img">
                                 <img class="card-img rounded-0" src="{{url($blog->photo)}}" alt="">
-                                <a href="#" class="blog_item_date">
+                                <a href="{{url('/single-blog/'.$blog->id)}}" class="blog_item_date">
                                     <h3>{{date('d',strtotime($blog->created_at))}}</h3>
                                     <p>{{date('F Y',strtotime($blog->created_at))}}</p>
                                 </a>
@@ -42,10 +42,10 @@
                                     <h2>{{$blog->title??'N/A'}}</h2>
                                 </a>
                                 <p>{!! substr($blog->content??'N/A',0,120) !!},,,</p>
-                                <ul class="blog-info-link">
+                                {{-- <ul class="blog-info-link">
                                     <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
                                     <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                </ul>
+                                </ul> --}}
                             </div>
                         </article>
                         @endforeach
@@ -165,7 +165,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="blog_right_sidebar">
-                        <aside class="single_sidebar_widget search_widget">
+                        {{-- <aside class="single_sidebar_widget search_widget">
                             <form action="#">
                                 <div class="form-group">
                                     <div class="input-group mb-3">
@@ -180,9 +180,9 @@
                                 <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
                                     type="submit">Search</button>
                             </form>
-                        </aside>
+                        </aside> --}}
 
-                        <aside class="single_sidebar_widget post_category_widget">
+                        {{-- <aside class="single_sidebar_widget post_category_widget">
                             <h4 class="widget_title">Category</h4>
                             <ul class="list cat-list">
                                 <li>
@@ -222,7 +222,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </aside>
+                        </aside> --}}
 
                         <aside class="single_sidebar_widget popular_post_widget">
                             @php
@@ -233,7 +233,7 @@
                             <div class="media post_item">
                                 <img src="{{url($rblog->photo)}}" style="width:50px;" alt="post">
                                 <div class="media-body">
-                                    <a href="single-blog.html">
+                                    <a href="{{url('/single-blog/'.$rblog->id)}}">
                                         <h3>{{substr($rblog->title??'N?A',0,20)}},,</h3>
                                     </a>
                                     <p>{{$rblog->created_at->diffForHumans()}}</p>
@@ -268,7 +268,7 @@
                                 </div>
                             </div> --}}
                         </aside>
-                        <aside class="single_sidebar_widget tag_cloud_widget">
+                        {{-- <aside class="single_sidebar_widget tag_cloud_widget">
                             <h4 class="widget_title">Tag Clouds</h4>
                             <ul class="list">
                                 <li>
@@ -296,10 +296,10 @@
                                     <a href="#">illustration</a>
                                 </li>
                             </ul>
-                        </aside>
+                        </aside> --}}
 
 
-                        <aside class="single_sidebar_widget instagram_feeds">
+                        {{-- <aside class="single_sidebar_widget instagram_feeds">
                             <h4 class="widget_title">Instagram Feeds</h4>
                             <ul class="instagram_row flex-wrap">
                                 <li>
@@ -333,10 +333,10 @@
                                     </a>
                                 </li>
                             </ul>
-                        </aside>
+                        </aside> --}}
 
 
-                        <aside class="single_sidebar_widget newsletter_widget">
+                        {{-- <aside class="single_sidebar_widget newsletter_widget">
                             <h4 class="widget_title">Newsletter</h4>
 
                             <form action="#">
@@ -347,7 +347,7 @@
                                 <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
                                     type="submit">Subscribe</button>
                             </form>
-                        </aside>
+                        </aside> --}}
                     </div>
                 </div>
             </div>

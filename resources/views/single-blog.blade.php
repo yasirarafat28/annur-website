@@ -33,10 +33,10 @@
                   <div class="blog_details">
                      <h2>{{$singleBlog->title??'N/A'}}
                      </h2>
-                     <ul class="blog-info-link mt-3 mb-4">
+                     {{-- <ul class="blog-info-link mt-3 mb-4">
                         <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
                         <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                     </ul>
+                     </ul> --}}
                      <p class="excert">
                         {!! $singleBlog->content??'N/A' !!}
                      </p>
@@ -113,7 +113,7 @@
                      </div>
                   </div>
                </div> --}}
-               <div class="comments-area">
+               {{-- <div class="comments-area">
                   <h4>05 Comments</h4>
                   <div class="comment-list">
                      <div class="single-comment justify-content-between d-flex">
@@ -193,8 +193,8 @@
                         </div>
                      </div>
                   </div>
-               </div>
-               <div class="comment-form">
+               </div> --}}
+               {{-- <div class="comment-form">
                   <h4>Leave a Reply</h4>
                   <form class="form-contact comment_form" action="#" id="commentForm">
                      <div class="row">
@@ -224,7 +224,7 @@
                         <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
                      </div>
                   </form>
-               </div>
+               </div> --}}
             </div>
             {{-- <div class="col-lg-4">
                <div class="blog_right_sidebar">
