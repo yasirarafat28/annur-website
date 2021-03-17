@@ -357,7 +357,7 @@
                 <div class="col-lg-8 col-md-10">
                     <div class="section_title text-center mb-70">
                         <h3 class="mb-45">Recent Event</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> --}}
                     </div>
                 </div>
             </div>
@@ -465,8 +465,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
                     <div class="section_title text-center mb-70">
-                        <h3 class="mb-45">Recent News</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h3 class="mb-45">Recent Blog</h3>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> --}}
                     </div>
                 </div>
             </div>
@@ -479,7 +479,7 @@
                             <a href="{{url('/single-blog/'.$blog->id)}}">
                                 <img src="{{url($blog->photo)}}" alt="">
                             </a>
-                            <span class="badge">Group Study</span>
+                            <span class="badge"></span>
                         </div>
                         <div class="news_info">
                             <a href="{{url('/single-blog/'.$blog->id)}}">

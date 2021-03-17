@@ -64,7 +64,7 @@
                             <div class="header_wrap d-flex justify-content-between align-items-center">
                                 <div class="header_left">
                                     <div class="logo">
-                                        <a href="index.html">
+                                        <a href="{{url('/')}}">
                                             <img src="/front/img/logo.png" alt="">
                                         </a>
                                     </div>
@@ -92,11 +92,11 @@
                                             </ul>
                                         </nav>
                                     </div>
-                                    <div class="Appointment">
+                                    {{-- <div class="Appointment">
                                         <div class="book_btn d-none d-lg-block">
                                             <a data-scroll-nav='1' href="#">Apply NOw</a>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
