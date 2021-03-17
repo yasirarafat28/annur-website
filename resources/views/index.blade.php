@@ -3,18 +3,19 @@
 
     <!-- slider_area_start -->
     <div class="slider_area">
-        <div class="slider_active owl-carousel">
+        @foreach ($galleries as $gallery)
+
+
+        <div class="{{$gallery['id']==1?'slider_active':''}} owl-carousel">
             <!-- single_carouse -->
-            <div class="single_slider  d-flex align-items-center slider_bg_1">
+            <div class="single_slider  d-flex align-items-center" style="background-image:url({{($gallery->file??'/')}});">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="slider_text ">
-                                <h3>Boost up your skills <br>
-                                    with a new way of <br>
-                                    learning.</h3>
-                                <a href="#" class="boxed-btn3">Get Start</a>
-                                <a href="#" class="boxed-btn4">Take a tour</a>
+                                <h3>{{$gallery->title??'N/A'}}</h3>
+                                {{-- <a href="#" class="boxed-btn3">Get Start</a>
+                                <a href="#" class="boxed-btn4">Take a tour</a> --}}
                             </div>
                         </div>
                     </div>
@@ -22,7 +23,7 @@
             </div>
             <!--/ single_carouse -->
             <!-- single_carouse -->
-            <div class="single_slider  d-flex align-items-center slider_bg_2">
+            {{-- <div class="single_slider  d-flex align-items-center slider_bg_2">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
@@ -36,10 +37,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!--/ single_carouse -->
             <!-- single_carouse -->
-            <div class="single_slider  d-flex align-items-center slider_bg_1">
+            {{-- <div class="single_slider  d-flex align-items-center slider_bg_1">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
@@ -53,14 +54,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!--/ single_carouse -->
         </div>
+        @endforeach
     </div>
     <!-- slider_area_end -->
 
     <!-- service_area_start  -->
-    <div class="service_area gray_bg">
+    {{-- <div class="service_area gray_bg">
         <div class="container">
             <div class="row justify-content-center ">
                 <div class="col-lg-4 col-md-6">
@@ -98,11 +100,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!--/ service_area_start  -->
 
     <!-- popular_program_area_start  -->
-    <div class="popular_program_area section__padding">
+    {{-- <div class="popular_program_area section__padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -306,11 +308,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- popular_program_area_end -->
 
     <!-- latest_coures_area_start  -->
-    <div class="latest_coures_area">
+    {{-- <div class="latest_coures_area">
         <div class="latest_coures_inner">
             <div class="container">
                 <div class="row">
@@ -345,7 +347,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!--/ latest_coures_area_end -->
 
     <!-- recent_event_area_strat  -->
@@ -361,19 +363,22 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-10">
+                    @foreach ($events as $event)
+
                     <div class="single_event d-flex align-items-center">
                         <div class="date text-center">
-                            <span>02</span>
-                            <p>Dec, 2020</p>
+                            <span>{{date('d',strtotime($event->created_at??''))}}</span>
+                            <p>{{date('F, Y',strtotime($event->created_at??''))}}</p>
                         </div>
                         <div class="event_info">
-                            <a href="event_details.html">
-                                <h4>How to speake like a nativespeaker?</h4>
+                            <a href="{{url('/event-details/'.$event->id)}}">
+                                <h4>{{$event->title??'N/A'}}</h4>
                              </a>
-                            <p><span> <i class="flaticon-clock"></i> 10:30 pm</span> <span> <i class="flaticon-calendar"></i> 21Nov 2020 </span> <span> <i class="flaticon-placeholder"></i> AH Oditoriam</span> </p>
+                            <p><span> <i class="flaticon-clock"></i> {{$event->time??'N/A'}}</span> <span> <i class="flaticon-calendar"></i>{{date('d F, Y',strtotime($event->start_date))}}</span> <span> <i class="flaticon-placeholder"></i> {{$event->place??'N/A'}}</span> </p>
                         </div>
                     </div>
-                    <div class="single_event d-flex align-items-center">
+                    @endforeach
+                    {{-- <div class="single_event d-flex align-items-center">
                         <div class="date text-center">
                             <span>03</span>
                             <p>Dec, 2020</p>
@@ -396,7 +401,7 @@
                              </a>
                             <p><span> <i class="flaticon-clock"></i> 10:30 pm</span> <span> <i class="flaticon-calendar"></i> 21Nov 2020 </span> <span> <i class="flaticon-placeholder"></i> AH Oditoriam</span> </p>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -404,7 +409,7 @@
     <!-- recent_event_area_end  -->
 
     <!-- latest_coures_area_start  -->
-    <div data-scroll-index='1' class="admission_area">
+    {{-- <div data-scroll-index='1' class="admission_area">
         <div class="admission_inner">
             <div class="container">
                 <div class="row justify-content-end">
@@ -450,7 +455,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!--/ latest_coures_area_end -->
 
 
@@ -465,28 +470,30 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
+                @foreach($blogs?? array() as $blog)
                 <div class="col-md-6">
                     <div class="single__news">
                         <div class="thumb">
-                            <a href="single-blog.html">
-                                <img src="/front/img/news/1.png" alt="">
+                            <a href="{{url('/single-blog/'.$blog->id)}}">
+                                <img src="{{url($blog->photo)}}" alt="">
                             </a>
                             <span class="badge">Group Study</span>
                         </div>
                         <div class="news_info">
-                            <a href="single-blog.html">
-                                <h4>Those Other College Expenses You
-                                    Aren’t Thinking About</h4>
+                            <a href="{{url('/single-blog/'.$blog->id)}}">
+                                <h4>{{$blog->title??'N/A'}}</h4>
                             </a>
-                            <p class="d-flex align-items-center"> <span><i class="flaticon-calendar-1"></i> May 10, 2020</span>
+                            <p class="d-flex align-items-center"> <span><i class="flaticon-calendar-1"></i> {{date('F d, Y',strtotime($blog->created_at))}}</span>
 
-                            <span> <i class="flaticon-comment"></i> 01 comments</span>
+                            {{-- <span> <i class="flaticon-comment"></i> 01 comments</span> --}}
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                @endforeach
+                {{-- <div class="col-md-6">
                     <div class="single__news">
                         <div class="thumb">
                             <a href="single-blog.html">
@@ -505,8 +512,9 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
+
         </div>
     </div>
     <!-- recent_news_area_end  -->

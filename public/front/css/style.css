@@ -2443,7 +2443,11 @@ h3 {
   font-size: 16px;
   line-height: 40px;
 }
+/* line 90, ../../Arafath/CL/january 2020/243.Education/HTML/scss/_footer.scss */
+.contact-info .media-body h3 {
 
+    color: #8891a1 !important;
+}
 /* line 94, ../../Arafath/CL/january 2020/243.Education/HTML/scss/_footer.scss */
 .footer .footer_top .footer_widget ul li a {
   color: #7A838B;

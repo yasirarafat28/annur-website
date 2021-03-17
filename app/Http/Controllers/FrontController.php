@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\About;
 use App\Appointment;
+use App\Blog;
+use App\Contact;
+use App\Event;
 use App\Gallery;
 use App\Inquiry;
 use App\Media;
@@ -21,8 +25,11 @@ class FrontController extends Controller
         SEO::setDescription("Treatment for cerebral palsy can be complex, addressing a wide range of individual symptoms and conditions. As a result, doctors and medical specialists from multiple disciplines work together improving outcomes for children with CP. Early intervention and treatment have the greatest positive impact. ");
 
 
-        $galleries = Gallery::where('status','active')->get();
-        return view('index',compact('galleries','homepage'));
+        $galleries = Gallery::where('status','active')->orderBy('created_at','DESC')->take(3)->get();
+        $blogs = Blog::where('status','active')->orderBy('created_at','DESC')->take(2)->get();
+        $events = Event::where('status','active')->orderBy('created_at','DESC')->take(3)->get();
+
+        return view('index',compact('galleries','homepage','blogs','events'));
     }
 
     public function testimonials(){
@@ -69,7 +76,26 @@ class FrontController extends Controller
         SEO::setTitle("Contact Us");
         SEO::setDescription("Treatment for cerebral palsy can be complex, addressing a wide range of individual symptoms and conditions. As a result, doctors and medical specialists from multiple disciplines work together improving outcomes for children with CP. Early intervention and treatment have the greatest positive impact. ");
 
-        return view('contact_us');
+        $contact = Contact::where('status','active')->orderBy('created_at','DESC')->first();
+        return view('contact',compact('contact'));
+    }
+
+    public function contactStore(Request $request){
+        $this->validate($request,[
+            'name'=>'required',
+            'email'=> 'required',
+            'message'=>'required'
+        ]);
+
+        $inquery = new Inquiry();
+        $inquery->name = $request->name;
+        $inquery->email = $request->email;
+        $inquery->phone = $request->phone;
+        $inquery->message = $request->message;
+        $inquery->save();
+
+        return back()->with('success','Your Message Sent Successfull !');
+
     }
 
 
@@ -100,7 +126,13 @@ class FrontController extends Controller
         SEO::setTitle("About Us");
         SEO::setDescription("Treatment for cerebral palsy can be complex, addressing a wide range of individual symptoms and conditions. As a result, doctors and medical specialists from multiple disciplines work together improving outcomes for children with CP. Early intervention and treatment have the greatest positive impact. ");
 
-        return view('about_us');
+        $about = About::where('status','active')->orderBy('created_at','DESC')->first();
+        return view('about-us',compact('about'));
+    }
+
+    public function event(){
+        $events = Event::where('status','active')->orderBy('created_at','DESC')->get();
+        return view('event',compact('events'));
     }
 
     public function appointment(){
@@ -129,5 +161,28 @@ class FrontController extends Controller
         return back()->withSuccess('Your appointment request has been sent successfully. Thank you!');
     }
 
+    public function blog(){
+
+        $blogs = Blog::where('status','active')->paginate(5);
+
+        return view('blog',compact('blogs'));
+    }
+    public function singleBlog($id){
+
+        $singleBlog = Blog::find($id);
+
+        return view('single-blog',compact('singleBlog'));
+    }
+
+    public function eventDetails($id){
+
+        $row = Event::find($id);
+        return view('event_details',compact('row'));
+    }
+
+    public function addmission(){
+
+        return view('admissions');
+    }
 
 }

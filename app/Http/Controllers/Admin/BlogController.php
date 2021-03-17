@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Blog;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        $records = Blog::orderBy('created_at','DESC')->paginate(25);
+
+        return view('admin.blog.index',compact('records'));
     }
 
     /**
@@ -24,7 +27,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.blog.create');
     }
 
     /**
@@ -35,7 +38,30 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'title'=>'required',
+            'content'=>'required'
+        ]);
+
+        $blogs = new Blog();
+        $blogs->title = $request->title;
+        $blogs->content = $request->content;
+        $blogs->status = $request->status;
+
+        if ($request->hasFile('photo')) {
+
+            $image      = $request->file('photo');
+            $imageName  = 'blogs_'.date('ymdhis').'.'.$image->getClientOriginalExtension();
+            $path       = 'images/file/';
+            $image->move($path, $imageName);
+            $imageUrl   = $path . $imageName;
+            $blogs->photo = $imageUrl;
+        }
+
+        $blogs->save();
+
+        return redirect('/admin/blogs')->withSuccess('Blog Added Successfull !');
+
     }
 
     /**
@@ -69,7 +95,29 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'title'=>'required',
+            'content'=>'required'
+        ]);
+
+        $blogs = Blog::find($id);
+        $blogs->title = $request->title;
+        $blogs->content = $request->content;
+        $blogs->status = $request->status;
+
+        if ($request->hasFile('photo')) {
+
+            $image      = $request->file('photo');
+            $imageName  = 'blogs_'.date('ymdhis').'.'.$image->getClientOriginalExtension();
+            $path       = 'images/file/';
+            $image->move($path, $imageName);
+            $imageUrl   = $path . $imageName;
+            $blogs->photo = $imageUrl;
+        }
+
+        $blogs->save();
+
+        return back()->withSuccess('Blog Update Successfull !');
     }
 
     /**
@@ -80,6 +128,7 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Blog::destroy($id);
+        return back()->withSuccess('Blog Remove Successfull !');
     }
 }

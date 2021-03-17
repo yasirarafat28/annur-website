@@ -43,8 +43,11 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="header_top_wrap d-flex justify-content-between align-items-center">
+                                @php
+                                    $contact = App\Contact::where('status','active')->orderBy('created_at','DESC')->first();
+                                @endphp
                                 <div class="text_wrap">
-                                    <p><span>+880166 253 232</span> <span>info@domain.com</span></p>
+                                    <p><span> <i class="fa fa-phone"></i> {{$contact->phone??'N/A'}}    </span> <span> <i class="fa fa-envelope"></i> {{$contact->email??'N/A'}}</span></p>
                                 </div>
                                 <div class="text_wrap">
                                     <p><a href="/login"> <i class="ti-user"></i>  Login</a> <a href="/register">Register</a></p>
@@ -70,23 +73,22 @@
                                     <div class="main-menu  d-none d-lg-block">
                                         <nav>
                                             <ul id="navigation">
-                                                <li><a  href="{{'/'}}">home</a></li>
-                                                <li><a href="Courses.html">Courses</a></li>
+                                                <li><a  href="{{'/'}}">Home</a></li>
+                                                <li><a href="{{'/about-us'}}">About Us</a></li>
                                                 <li><a href="#">blog <i class="ti-angle-down"></i></a>
                                                     <ul class="submenu">
-                                                        <li><a href="blog.html">blog</a></li>
-                                                        <li><a href="single-blog.html">single-blog</a></li>
+                                                        <li><a href="/blogs">blog</a></li>
+                                                        {{-- <li><a href="single-blog.html">single-blog</a></li> --}}
                                                     </ul>
                                                 </li>
                                                 <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                                     <ul class="submenu">
-                                                        <li><a href="Event.html">Event</a></li>
-                                                        <li><a href="event_details.html">Event Details</a></li>
-                                                        <li><a href="Admissions.html">Admissions</a></li>
-                                                        <li><a href="elements.html">elements</a></li>
+                                                        <li><a href="{{url('/events')}}">Event</a></li>
+                                                        <li><a href="{{url('/addmissions')}}">Admissions</a></li>
+                                                        {{-- <li><a href="{{url('/elements')}}">elements</a></li> --}}
                                                     </ul>
                                                 </li>
-                                                <li><a href="contact.html">Contact</a></li>
+                                                <li><a href="/contact-us">Contact Us</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -163,49 +165,63 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="col-xl-4 col-md-6 col-lg-4">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                About Us
+                                Contact Us
+                            </h3>
+                            <div class="col-lg-12 offset-lg-1">
+                                <div class="media contact-info col-lg-3">
+                                    <span class="contact-info__icon"><i class="ti-home"></i></span>
+                                    <div class="media-body">
+                                        <h3>{!! $contact->address??'N/A' !!}</h3>
+                                        {{-- <p>Rosemead, CA 91770</p> --}}
+                                    </div>
+                                </div>
+                                <div class="media contact-info  col-lg-3">
+                                    <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+                                    <div class="media-body">
+                                        <h3>{{$contact->phone??'N/A'}}</h3>
+                                        {{-- <p>Mon to Fri 9am to 6pm</p> --}}
+                                    </div>
+                                </div>
+                                <div class="media contact-info  col-lg-3">
+                                    <span class="contact-info__icon"><i class="ti-email"></i></span>
+                                    <div class="media-body">
+                                        <h3>{{$contact->email??'N/A'}}</h3>
+                                        {{-- <p>Send us your query anytime!</p> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Quick Access
                             </h3>
                             <ul>
-                                <li><a href="#">Online Learning</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Press Center</a></li>
-                                <li><a href="#">Become an Instructor</a></li>
+                                <li><a href="{{url('/')}}"> <i class="fa fa-external-link"></i> Home</a></li>
+                                <li><a href="{{url('/contact-us')}}"><i class="fa fa-external-link"></i>contact Us</a></li>
+                                <li><a href="{{url('/about-us')}}"><i class="fa fa-external-link"></i>About Us</a></li>
+                                <li><a href="{{url('/blogs')}}"><i class="fa fa-external-link"></i>Blog</a></li>
+                                <li><a href="{{url('/events')}}"><i class="fa fa-external-link"></i>Event</a></li>
+
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="col-xl-4 col-md-6 col-lg-4">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                Campus
+                                Reference
                             </h3>
                             <ul>
-                                <li><a href="#">Our Plans</a></li>
-                                <li><a href="#">Free Trial</a></li>
-                                <li><a href="#">Academic Solutions</a></li>
-                                <li><a href="#">Business Solutions</a></li>
-                                <li><a href="#">Government Solutions</a></li>
+                                <li><a href="#">Softwere and Technology</a></li>
+
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Study
-                            </h3>
-                            <ul>
-                                <li><a href="#">Admissions Policy</a></li>
-                                <li><a href="#">Getting Started</a></li>
-                                <li><a href="#">Visa Information</a></li>
-                                <li><a href="#">Tuition Calculator</a></li>
-                                <li><a href="#">Request Information</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
+                    {{-- <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <h3 class="footer_title">
                                 Support
@@ -218,7 +234,7 @@
                                 <li><a href="#">Site feedback</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

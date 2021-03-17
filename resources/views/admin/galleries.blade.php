@@ -63,18 +63,18 @@ padding: 6px !important;
                                             <a target="_blank" href="{{url($gallery->file??'')}}">
                                                 <div class="hover">
                                                     <div class="d-flex">
-                                                    <button data-toggle="modal" data-target="#largeEditModal{{$gallery->id}}" class="dropdown-item" title="Edit"><i class="fa fa-edit"> </i> এডিট</button>
+                                                    <button data-toggle="modal" data-target="#largeEditModal{{$gallery->id}}" class="dropdown-item" title="Edit"><i class="fa fa-edit"> </i> Edit</button>
 
                                                         {!! Form::open([
                                                             'method'=>'DELETE',
                                                             'url' => ['/admin/galleries', $gallery->id],
                                                             'style' => 'display:inline'
                                                             ]) !!}
-                                                            {!! Form::button('<i class="fa fa-trash"></i>  মুছে ফেলুন', array(
+                                                            {!! Form::button('<i class="fa fa-trash"></i> Delete', array(
                                                                 'type' => 'submit',
                                                                 'class' => 'dropdown-item',
                                                                 'title' => 'Delete user',
-                                                                'onclick'=>'return confirm("আপনি কি নিশ্চিত?")'
+                                                                'onclick'=>'return confirm("Are you sure?")'
                                                                 )) !!}
                                                         {!! Form::close() !!}
                                                     </div>

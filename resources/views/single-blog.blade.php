@@ -1,108 +1,11 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
 
-<head>
-   <meta charset="utf-8">
-   <meta http-equiv="x-ua-compatible" content="ie=edge">
-   <title>Education</title>
-   <meta name="description" content="">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-   <!-- <link rel="manifest" href="site.webmanifest"> -->
-   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-   <!-- Place favicon.ico in the root directory -->
+@section('style')
 
-   <!-- CSS here -->
-   <link rel="stylesheet" href="css/bootstrap.min.css">
-   <link rel="stylesheet" href="css/owl.carousel.min.css">
-   <link rel="stylesheet" href="css/magnific-popup.css">
-   <link rel="stylesheet" href="css/font-awesome.min.css">
-   <link rel="stylesheet" href="css/themify-icons.css">
-   <link rel="stylesheet" href="css/nice-select.css">
-   <link rel="stylesheet" href="css/flaticon.css">
-   <link rel="stylesheet" href="css/gijgo.css">
-   <link rel="stylesheet" href="css/animate.css">
-   <link rel="stylesheet" href="css/slicknav.css">
-   <link rel="stylesheet" href="css/style.css">
-   <!-- <link rel="stylesheet" href="css/responsive.css"> -->
-</head>
+@endsection
 
-<body>
-   <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-    <!-- header-start -->
-    <header>
-      <div class="header-area ">
-          <div class="header-top_area">
-              <div class="container-fluid">
-                  <div class="row">
-                      <div class="col-lg-12">
-                          <div class="header_top_wrap d-flex justify-content-between align-items-center">
-                              <div class="text_wrap">
-                                  <p><span>+880166 253 232</span> <span>info@domain.com</span></p>
-                              </div>
-                              <div class="text_wrap">
-                                  <p><a href="#"> <i class="ti-user"></i>  Login</a> <a href="#">Register</a></p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div id="sticky-header" class="main-header-area">
-              <div class="container-fluid">
-                  <div class="row">
-                      <div class="col-lg-12">
-                          <div class="header_wrap d-flex justify-content-between align-items-center">
-                              <div class="header_left">
-                                  <div class="logo">
-                                      <a href="index.html">
-                                          <img src="img/logo.png" alt="">
-                                      </a>
-                                  </div>
-                              </div>
-                              <div class="header_right d-flex align-items-center">
-                                  <div class="main-menu  d-none d-lg-block">
-                                      <nav>
-                                          <ul id="navigation">
-                                              <li><a  href="index.html">home</a></li>
-                                              <li><a href="Courses.html">Courses</a></li>
-                                              <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                                  <ul class="submenu">
-                                                      <li><a href="blog.html">blog</a></li>
-                                                      <li><a href="single-blog.html">single-blog</a></li>
-                                                  </ul>
-                                              </li>
-                                              <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                                  <ul class="submenu">
-                                                      <li><a href="Event.html">Event</a></li>
-                                                      <li><a href="event_details.html">Event Details</a></li>
-                                                      <li><a href="Admissions.html">Admissions</a></li>
-                                                      <li><a href="elements.html">elements</a></li>
-                                                  </ul>
-                                              </li>
-                                              <li><a href="contact.html">Contact</a></li>
-                                          </ul>
-                                      </nav>
-                                  </div>
-                                  <div class="Appointment">
-                                      <div class="book_btn d-none d-lg-block">
-                                          <a data-scroll-nav='1' href="#">Apply NOw</a>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-12">
-                          <div class="mobile_menu d-block d-lg-none"></div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </header>
-  <!-- header-end -->
+@section('content')
 
   <!-- bradcam_area_start  -->
   <div class="bradcam_area breadcam_bg">
@@ -125,49 +28,23 @@
             <div class="col-lg-8 posts-list">
                <div class="single-post">
                   <div class="feature-img">
-                     <img class="img-fluid" src="img/blog/single_blog_1.png" alt="">
+                     <img class="img-fluid" src="{{url($singleBlog->photo??'')}}" alt="">
                   </div>
                   <div class="blog_details">
-                     <h2>Second divided from form fish beast made every of seas
-                        all gathered us saying he our
+                     <h2>{{$singleBlog->title??'N/A'}}
                      </h2>
                      <ul class="blog-info-link mt-3 mb-4">
                         <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
                         <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
                      </ul>
                      <p class="excert">
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower
+                        {!! $singleBlog->content??'N/A' !!}
                      </p>
-                     <p>
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower to actually sit through a
-                        self-imposed MCSE training. who has the willpower to actually
-                     </p>
-                     <div class="quote-wrapper">
-                        <div class="quotes">
-                           MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                           should have to spend money on boot camp when you can get the MCSE study materials yourself at
-                           a fraction of the camp price. However, who has the willpower to actually sit through a
-                           self-imposed MCSE training.
-                        </div>
-                     </div>
-                     <p>
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower
-                     </p>
-                     <p>
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower to actually sit through a
-                        self-imposed MCSE training. who has the willpower to actually
-                     </p>
+
+
                   </div>
                </div>
-               <div class="navigation-top">
+               {{-- <div class="navigation-top">
                   <div class="d-sm-flex justify-content-between text-center">
                      <p class="like-info"><span class="align-middle"><i class="fa fa-heart"></i></span> Lily and 4
                         people like this</p>
@@ -223,8 +100,8 @@
                         </div>
                      </div>
                   </div>
-               </div>
-               <div class="blog-author">
+               </div> --}}
+               {{-- <div class="blog-author">
                   <div class="media align-items-center">
                      <img src="img/blog/author.png" alt="">
                      <div class="media-body">
@@ -235,7 +112,7 @@
                            our dominion twon Second divided from</p>
                      </div>
                   </div>
-               </div>
+               </div> --}}
                <div class="comments-area">
                   <h4>05 Comments</h4>
                   <div class="comment-list">
@@ -349,7 +226,7 @@
                   </form>
                </div>
             </div>
-            <div class="col-lg-4">
+            {{-- <div class="col-lg-4">
                <div class="blog_right_sidebar">
                   <aside class="single_sidebar_widget search_widget">
                      <form action="#">
@@ -474,7 +351,7 @@
                            <a href="#">illustration</a>
                         </li>
                      </ul>
-                  </aside>
+                  </aside
                   <aside class="single_sidebar_widget instagram_feeds">
                      <h4 class="widget_title">Instagram Feeds</h4>
                      <ul class="instagram_row flex-wrap">
@@ -522,12 +399,18 @@
                      </form>
                   </aside>
                </div>
-            </div>
+            </div> --}}
          </div>
       </div>
    </section>
    <!--================ Blog Area end =================-->
 
+@endsection
+
+@section('script')
+
+@endsection
+{{--
     <!-- footer start -->
     <footer class="footer">
       <div class="footer_top">
@@ -574,7 +457,7 @@
                                       </li>
                                   </ul>
                               </div>
-  
+
                           </div>
                       </div>
                   </div>
@@ -702,4 +585,4 @@
   </script>
 </body>
 
-</html>
+</html> --}}
