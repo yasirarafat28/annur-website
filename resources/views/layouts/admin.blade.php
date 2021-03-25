@@ -73,19 +73,19 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <li class="nav-item active">
+            {{-- <li class="nav-item active">
                 <a class="nav-link" href="/admin/testimonials">
                     <i class="fas fa-coins"></i>
                     <span>Testimonials</span>
                 </a>
-            </li>
+            </li> --}}
 
-            <li class="nav-item active">
+            {{-- <li class="nav-item active">
                 <a class="nav-link" href="/admin/successful-treatments">
                     <i class="fas fa-coins"></i>
                     <span>Success Treatment</span>
                 </a>
-            </li>
+            </li> --}}
 
             <li class="nav-item active">
                 <a class="nav-link" href="/admin/inquiries">
@@ -94,12 +94,12 @@
                 </a>
             </li>
 
-            <li class="nav-item active">
+            {{-- <li class="nav-item active">
                 <a class="nav-link" href="/admin/appointments">
                     <i class="fas fa-coins"></i>
                     <span>Appointments</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item active">
                 <a class="nav-link" href="/admin/galleries">
                     <i class="fas fa-coins"></i>
@@ -130,8 +130,8 @@
                     <span>About</span>
                 </a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/admin/media">
+            {{-- <li class="nav-item active">
+                <a class="n25441168622544116862av-link" href="/admin/media">
                     <i class="fas fa-coins"></i>
                     <span>Media</span>
                 </a>
@@ -141,7 +141,7 @@
                     <i class="fas fa-coins"></i>
                     <span>Page Contents</span>
                 </a>
-            </li>
+            </li> --}}
 
 
             <!-- Divider -->
