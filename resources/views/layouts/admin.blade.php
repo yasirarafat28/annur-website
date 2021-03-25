@@ -89,7 +89,7 @@
 
             <li class="nav-item active">
                 <a class="nav-link" href="/admin/inquiries">
-                    <i class="fas fa-coins"></i>
+                    <i class="fa fa-question-circle" aria-hidden="true"></i>
                     <span>Inquiry</span>
                 </a>
             </li>
@@ -102,31 +102,31 @@
             </li> --}}
             <li class="nav-item active">
                 <a class="nav-link" href="/admin/galleries">
-                    <i class="fas fa-coins"></i>
+                    <i class="fas fa-image"></i>
                     <span>Galleries</span>
                 </a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/admin/blogs">
-                    <i class="fas fa-coins"></i>
+                    <i class="fas fa-blog"></i>
                     <span>Blog</span>
                 </a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/admin/events">
-                    <i class="fas fa-coins"></i>
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
                     <span>Event</span>
                 </a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/admin/contacts">
-                    <i class="fas fa-coins"></i>
+                    <i class="far fa-address-card"></i>
                     <span>Contact</span>
                 </a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/admin/abouts">
-                    <i class="fas fa-coins"></i>
+                    <i class="far fa-address-book"></i>
                     <span>About</span>
                 </a>
             </li>
