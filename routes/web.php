@@ -51,6 +51,8 @@ Route::group(['middleware' => ['auth'],'prefix'=>'admin','namespace'=>'Admin'], 
     Route::resource('contacts', 'ContactController');
     Route::resource('abouts', 'AboutController');
     Route::resource('events', 'EventController');
+    Route::resource('admissions', 'AdmissionController');
+    Route::resource('notice', 'NoticeController');
 });
 
 

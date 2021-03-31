@@ -64,11 +64,11 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            {{-- <li class="nav-item active">
                 <a class="nav-link" href="/admin/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
-            </li>
+            </li> --}}
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -116,6 +116,18 @@
                 <a class="nav-link" href="/admin/events">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                     <span>Event</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/admin/admissions">
+                    <i class="fa fa-university" aria-hidden="true"></i>
+                    <span>Admission</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/admin/notice">
+                    <i class="fas fa-bell"></i>
+                    <span>Notice</span>
                 </a>
             </li>
             <li class="nav-item active">

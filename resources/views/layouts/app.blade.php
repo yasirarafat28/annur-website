@@ -73,22 +73,13 @@
                                     <div class="main-menu  d-none d-lg-block">
                                         <nav>
                                             <ul id="navigation">
-                                                <li><a  href="{{'/'}}">Home</a></li>
-                                                <li><a href="{{'/about-us'}}">About Us</a></li>
-                                                <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="/blogs">blog</a></li>
-                                                        {{-- <li><a href="single-blog.html">single-blog</a></li> --}}
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="{{url('/events')}}">Event</a></li>
-                                                        <li><a href="{{url('/addmissions')}}">Admissions</a></li>
-                                                        {{-- <li><a href="{{url('/elements')}}">elements</a></li> --}}
-                                                    </ul>
-                                                </li>
-                                                <li><a href="/contact-us">Contact Us</a></li>
+                                                <li><a  href="{{url('/')}}">Home</a></li>
+                                                <li><a href="{{url('/about-us')}}">About Us</a></li>
+                                                <li><a href="{{url('/blogs')}}">blog</a></li>
+                                                <li><a href="{{url('/events')}}">Event</a></li>
+                                                <li><a href="{{url('/addmissions')}}">Admissions</a></li>
+                                                <li><a href="{{url('/contact-us')}}">Contact Us</a></li>
+                                                <li><a href="{{url('/notice')}}">Notice Board</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -120,7 +111,7 @@
                 <div class="newsLetter_wrap">
                     <div class="row justify-content-between">
                         <div class="col-md-7">
-                            <div class="footer_widget">
+                            {{-- <div class="footer_widget">
                                 <h3 class="footer_title">
                                     Stay Updated
                                 </h3>
@@ -128,13 +119,13 @@
                                     <input type="text" placeholder="Email Address">
                                     <button type="submit">Subscribe Now</button>
                                 </form>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="col-md-12 col-lg-5">
                             <div class="footer_widget">
-                                <h3 class="footer_title">
+                                {{-- <h3 class="footer_title">
                                     Stay Updated
-                                </h3>
+                                </h3> --}}
                                 <div class="socail_links">
                                     <ul>
                                         <li>
