@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Cerebral Palsy - Dashboards</title>
+    <title>Annur</title>
 
     <!-- Custom fonts for this template-->
     <link href="/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -57,18 +57,18 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">CPT <sup></sup></div>
+                <div class="sidebar-brand-text mx-3">Annur <sup></sup></div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            {{-- <li class="nav-item active">
+            <li class="nav-item active">
                 <a class="nav-link" href="/admin/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
-            </li> --}}
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -144,7 +144,7 @@
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/admin/social-links">
-                    <i class="far fa-address-book"></i>
+                    <i class="fa fa-link" aria-hidden="true"></i>
                     <span>Socail Link</span>
                 </a>
             </li>
