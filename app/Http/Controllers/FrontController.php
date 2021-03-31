@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\About;
+use App\Admission;
 use App\Appointment;
 use App\Blog;
 use App\Contact;
@@ -10,6 +11,8 @@ use App\Event;
 use App\Gallery;
 use App\Inquiry;
 use App\Media;
+use App\Notice;
+use App\SocialLink;
 use App\SuccessfulTreatment;
 use App\Testimonials;
 use Illuminate\Http\Request;
@@ -182,7 +185,20 @@ class FrontController extends Controller
 
     public function addmission(){
 
-        return view('admissions');
+        $admission = Admission::where('status','active')->orderBy('created_at','DESC')->first();
+        return view('admission',compact('admission'));
+    }
+
+    public function notice(){
+
+        $notices = Notice::where('status','active')->orderBy('created_at','DESC')->take(5)->get();
+        return view('notice',compact('notices'));
+    }
+
+    public function noticeDetails($id){
+
+        $notice_row = Notice::find($id);
+        return view('notice-details',compact('notice_row'));
     }
 
 }

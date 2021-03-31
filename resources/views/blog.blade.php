@@ -30,7 +30,7 @@
                         @foreach($blogs?? array() as $blog)
                         <article class="blog_item">
                             <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="{{url($blog->photo)}}" alt="">
+                                <img class="card-img rounded-0" src="{{url($blog->photo)}}" alt="" onerror="this.src='/images/file/default-image.jpg';">
                                 <a href="{{url('/single-blog/'.$blog->id)}}" class="blog_item_date">
                                     <h3>{{date('d',strtotime($blog->created_at))}}</h3>
                                     <p>{{date('F Y',strtotime($blog->created_at))}}</p>
@@ -231,7 +231,7 @@
                             <h3 class="widget_title">Recent Post</h3>
                             @foreach( $recent_blogs?? array() as $rblog)
                             <div class="media post_item">
-                                <img src="{{url($rblog->photo)}}" style="width:50px;" alt="post">
+                                <img src="{{url($rblog->photo)}}" style="width:50px;" alt="post" onerror="this.src='/images/file/default-image.jpg';">
                                 <div class="media-body">
                                     <a href="{{url('/single-blog/'.$rblog->id)}}">
                                         <h3>{{substr($rblog->title??'N?A',0,20)}},,</h3>

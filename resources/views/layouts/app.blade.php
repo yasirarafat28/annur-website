@@ -110,8 +110,8 @@
             <div class="container">
                 <div class="newsLetter_wrap">
                     <div class="row justify-content-between">
-                        <div class="col-md-7">
-                            {{-- <div class="footer_widget">
+                        {{-- <div class="col-md-7">
+                            <div class="footer_widget">
                                 <h3 class="footer_title">
                                     Stay Updated
                                 </h3>
@@ -119,33 +119,52 @@
                                     <input type="text" placeholder="Email Address">
                                     <button type="submit">Subscribe Now</button>
                                 </form>
-                            </div> --}}
-                        </div>
-                        <div class="col-md-12 col-lg-5">
+                            </div>
+                        </div> --}}
+                        <div class="col-md-12 col-lg-12">
                             <div class="footer_widget">
                                 {{-- <h3 class="footer_title">
                                     Stay Updated
                                 </h3> --}}
                                 <div class="socail_links">
+                                    @php
+                                        $socialLink = App\SocialLink::where('status','active')->orderBy('created_at','DESC')->first();
+
+                                    @endphp
                                     <ul>
                                         <li>
-                                            <a href="#">
-                                                <i class="ti-facebook"></i>
+                                            <a href="{{url($socialLink->facebook??'#')}}" target="_blank">
+                                                <i class="fa fa-facebook"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="{{url($socialLink->twitter??'#')}}" target="_blank">
                                                 <i class="fa fa-twitter"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="{{url($socialLink->gmail??'#')}}" target="_blank">
                                                 <i class="fa fa-google-plus"></i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="{{url($socialLink->linkedin??'#')}}" target="_blank">
                                                 <i class="fa fa-linkedin"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url($socialLink->youtube??'#')}}" target="_blank">
+                                                <i class="fa fa-youtube"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url($socialLink->skype??'#')}}" target="_blank">
+                                                <i class="fa fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url($socialLink->android??'#')}}" target="_blank">
+                                                <i class="fa fa-android"></i>
                                             </a>
                                         </li>
                                     </ul>
@@ -229,7 +248,7 @@
                 </div>
             </div>
         </div>
-        <div class="copy-right_text">
+        {{-- <div class="copy-right_text">
             <div class="container">
                 <div class="footer_border"></div>
                 <div class="row">
@@ -242,7 +261,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </footer>
     <!-- footer end  -->
 

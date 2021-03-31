@@ -67,7 +67,7 @@
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
                                     <td>
-                                        <img src="{{asset( $item->photo??'')}}" onerror="this.src='/front/images/no_img_avaliable.jpg';" alt="s2.jpg" width="60">
+                                        <img src="{{asset( $item->photo??'')}}" onerror="this.src='/images/file/default-image.jpg';" alt="s2.jpg" width="60">
                                     </td>
                                     <td>{{$item->title}}</td>
                                     <td>{!! substr($item->content??'N/A',0,30) !!}...</td>
@@ -189,7 +189,7 @@
                                 <tr>
                                     <td> Photo </td>
                                     <td>
-                                        <img src="{{asset( $row->photo??'')}}" width="100" onerror="this.src='/front/images/no_img_avaliable.jpg';" alt="s2.jpg">
+                                        <img src="{{asset( $row->photo??'')}}" width="100" onerror="this.src='/images/file/default-image.jpg';" alt="s2.jpg">
                                     </td>
                                 </tr>
                                 <tr>

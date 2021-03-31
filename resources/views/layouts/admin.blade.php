@@ -142,6 +142,12 @@
                     <span>About</span>
                 </a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/admin/social-links">
+                    <i class="far fa-address-book"></i>
+                    <span>Socail Link</span>
+                </a>
+            </li>
             {{-- <li class="nav-item active">
                 <a class="n25441168622544116862av-link" href="/admin/media">
                     <i class="fas fa-coins"></i>

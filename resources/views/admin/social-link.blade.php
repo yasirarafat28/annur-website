@@ -25,11 +25,11 @@
         @endif
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Event List</h1>
+            <h1 class="h3 mb-0 text-gray-800">Socail Link List</h1>
 
             <ul class="breadcrumb float-md-right">
-                <li class="breadcrumb-item"><a href="#"><i class="zmdi zmdi-home"></i>Home</a></li>
-                <li class="breadcrumb-item"><a href="javascript:void(0);">Event List</a></li>
+                {{-- <li class="breadcrumb-item"><a href="#"><i class="zmdi zmdi-home"></i> {{\App\Setting::setting()->app_name}}</a></li> --}}
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Socail Link List</a></li>
             </ul>
         </div>
 
@@ -40,10 +40,10 @@
                     <div class="header">
                         <div class="clearfix">
                             <div class="float-left">
-                                <h2>Event List</h2>
+                                <h2>Socail Link List</h2>
                             </div>
                             <div class="float-right">
-                                <a  data-toggle="modal" data-target="#eventCreateModal" class="btn btn-primary"><i class="fas fa-fw fa-plus"> </i> Add </i></a>
+                                <a  data-toggle="modal" data-target="#socialLinkCreateModal" class="btn btn-primary"><i class="fas fa-fw fa-plus"> </i> Add </i></a>
                             </div>
                         </div>
 
@@ -53,11 +53,10 @@
                             <thead>
                             <tr>
                                 <th> # </th>
-                                <th>Title</th>
-                                <th>image</th>
-                                <th>Content</th>
-                                <th>Status</th>
-                                <th>Start Date</th>
+                                <th>Facebook</th>
+                                <th>Google+</th>
+                                <th>Youtube  </th>
+                                <th>Status  </th>
                                 <th>Action</th>
 
                             </tr>
@@ -67,20 +66,17 @@
                             @foreach($records as $item)
                                 <tr>
                                     <td>{{$loop->iteration}} </td>
-                                    <td>
-                                        <img src="{{url($item->image)}}" alt="" style="width:80px;" onerror="this.src='/images/file/default-image.jpg';">
-                                    </td>
-                                    <td>{{$item->title??'N/A'}}</td>
-                                    <td>{!! substr($item->note??'N/A',0,20) !!},,,</td>
+                                    <td>{{$item->facebook??'N/A'}}</td>
+                                    <td>{{$item->gmail??'N/A'}}</td>
+                                    <td>{{$item->youtube??'N/A'}}</td>
                                     <td>{{$item->status}}</td>
-                                    <td>{{$item->start_date}}</td>
                                     <td>
-                                        <a data-toggle="modal" data-target="#eventEditModal{{$item->id}}" class="btn btn-primary btn-sm" title="Edit"><i class="fa fa-edit"> </i></a>
-                                        <a data-toggle="modal" data-target="#eventShowModal{{$item->id}}" class="btn btn-primary btn-sm" title="Edit"><i class="fa fa-eye"> </i></a>
+                                        <a data-toggle="modal" data-target="#socialLinkEditModal{{$item->id}}" class="btn btn-primary btn-sm" title="Edit"><i class="fa fa-edit"> </i></a>
+                                        <a data-toggle="modal" data-target="#socialLinkShowModal{{$item->id}}" class="btn btn-primary btn-sm" title="show"><i class="fa fa-eye"> </i></a>
 
                                                 {!! Form::open([
                                                 'method'=>'DELETE',
-                                                'url' => ['/admin/events', $item->id],
+                                                'url' => ['/admin/social-links', $item->id],
                                                 'style' => 'display:inline'
                                                 ]) !!}
                                                 {!! Form::button('<i class="fa fa-times"></i>', array(
@@ -107,66 +103,64 @@
 </section>
 
  <!-- Show Modal Start -->
- <div class="modal fade" id="eventCreateModal" tabindex="-1" role="dialog">
+ <div class="modal fade" id="socialLinkCreateModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
 
                     <div class="modal-header">
-                        <h2><strong> Event</strong> Add</h2>
+                        <h2><strong> Social Link</strong> Add</h2>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
 
-                        <form action="{{url('admin/events')}}" accept-charset="UTF-8" enctype="multipart/form-data" method="POST">
+                        <form action="{{url('admin/social-links')}}" accept-charset="UTF-8" enctype="multipart/form-data" method="POST">
                             {{csrf_field()}}
 
 
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for=""><small>Facebook</small></label>
+                                    <input type="text" placeholder="Facebook" name="facebook" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for=""><small>Twitter</small></label>
+                                    <input type="text" placeholder="twitter" name="twitter" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for=""><small>Linkedin</small></label>
+                                    <input type="text" placeholder="Linkedin" name="linkedin" class="form-control">
+                                </div>
+                            </div>
+
 
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <div class="form-group">
-                                    <label for=""><small>Title</small></label>
-                                    <input type="text" placeholder="Title" name="title" class="form-control" >
+                                    <label for=""><small>Google+</small></label>
+                                    <input type="text" placeholder="Google+" name="gmail" class="form-control">
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <div class="form-group">
-                                    <label for=""><small>Place</small></label>
-                                    <input type="text" placeholder="Place" name="place" class="form-control" >
+                                    <label for=""><small>Youtube</small></label>
+                                    <input type="text" placeholder="Youtube" name="youtube" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label for=""><small>Start Date</small></label>
-                                    <input type="date" placeholder="Place" name="start_date" class="form-control datepicker" >
-                                </div>
-
-                            </div>
-
-                            {{-- <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label for=""><small>End Date</small></label>
-                                    <input type="date" placeholder="Place" name="end_date" class="form-control datepicker" >
-                                </div>
-                            </div> --}}
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label for=""><small>Time</small></label>
-                                    <input type="time" placeholder="Time" name="time" class="form-control timepicker" >
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <label for=""><small>Image</small></label>
-                                    <input type="file" placeholder="image" name="image" class="form-control" >
-                                </div>
-                            </div>
-
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <div class="form-group">
-                                    <label for=""><small>Content</small></label>
-                                    <textarea name="note" id="" placeholder="Content" class="form-control"></textarea>
+                                    <label for=""><small>Skype</small></label>
+                                    <input type="text" placeholder="Skype" name="skype" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for=""><small>Android</small></label>
+                                    <input type="text" placeholder="Android" name="android" class="form-control">
                                 </div>
                             </div>
 
@@ -196,75 +190,75 @@
     @foreach($records as $row)
 
      <!-- Edit Modal Start -->
-     <div class="modal fade" id="eventEditModal{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal fade" id="socialLinkEditModal{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
 
                         <div class="modal-header">
-                            <h2><strong> Event</strong> Update</h2>
+                            <h2><strong> Social Link</strong> Update</h2>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
 
-                            <form action="{{url('admin/events/'.$row->id)}}" accept-charset="UTF-8" enctype="multipart/form-data" method="POST">
+                            <form action="{{url('admin/social-links/'.$row->id)}}" accept-charset="UTF-8" enctype="multipart/form-data" method="POST">
                                 {{csrf_field()}}
                                 {{method_field('PATCH')}}
 
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label for=""><small>Facebook</small></label>
+                                        <input type="text" placeholder="Facebook" name="facebook" class="form-control" value="{{$row->facebook}}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label for=""><small>Twitter</small></label>
+                                        <input type="text" placeholder="twitter" name="twitter" class="form-control" value="{{$row->twitter}}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label for=""><small>Linkedin</small></label>
+                                        <input type="text" placeholder="Linkedin" name="linkedin" class="form-control" value="{{$row->linkedin}}">
+                                    </div>
+                                </div>
+
 
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
-                                        <label for=""><small>Title</small></label>
-                                        <input type="text" placeholder="Title" name="title" class="form-control" value="{{$row->title}}">
+                                        <label for=""><small>E-mail</small></label>
+                                        <input type="text" placeholder="E-mail" name="gmail" class="form-control" value="{{$row->gmail}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
-                                        <label for=""><small>Place</small></label>
-                                        <input type="text" placeholder="Place" name="place" class="form-control" value="{{$row->place}}">
+                                        <label for=""><small>Youtube</small></label>
+                                        <input type="text" placeholder="Youtube" name="youtube" class="form-control" value="{{$row->youtube}}">
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <label for=""><small>Start Date</small></label>
-                                        <input type="date" placeholder="Place" name="start_date" class="form-control datepicker" value="{{$row->start_date}}">
-                                    </div>
-
-                                </div>
-
-                                {{-- <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <label for=""><small>End Date</small></label>
-                                        <input type="date" placeholder="Place" name="end_date" class="form-control datepicker" >
-                                    </div>
-                                </div> --}}
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <label for=""><small>Time</small></label>
-                                        <input type="time" placeholder="Time" name="time" class="form-control timepicker" value="{{$row->time}}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <label for=""><small>Image</small></label>
-                                        <input type="file" placeholder="image" name="image" class="form-control" value="{{$row->image}}">
-                                    </div>
-                                </div>
-
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
-                                        <label for=""><small>Content</small></label>
-                                        <textarea name="note" id="" placeholder="Content" class="form-control">{!! $row->note !!}</textarea>
+                                        <label for=""><small>Skype</small></label>
+                                        <input type="text" placeholder="Skype" name="skype" class="form-control" value="{{$row->skype}}">
                                     </div>
                                 </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label for=""><small>Android</small></label>
+                                        <input type="text" placeholder="Android" name="android" class="form-control" value="{{$row->android}}">
+                                    </div>
+                                </div>
+
+
 
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
                                         <label for=""><small>Status</small></label>
                                         <select name="status" id="status" class="form-control">
-                                            <option value="active" {{$row->status=='active'?'selected':''}}>Active</option>
-                                            <option value="inactive" {{$row->status=='inactive'?'selected':''}}>Inactive</option>
+                                            <option value="active" {{$row->status=='active' ? 'selected' : ''}}>Active</option>
+                                            <option value="inactive" {{$row->status=='inactive' ? 'selected' : ''}}>Inactive</option>
                                         </select>
                                     </div>
                                 </div>
@@ -284,13 +278,13 @@
     <!--Edit Modal End-->
 
     <!-- Show Modal Start -->
-    <div class="modal fade" id="eventShowModal{{$row->id}}" tabindex="-1" role="dialog">
+    <div class="modal fade" id="socialLinkShowModal{{$row->id}}" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
 
 
                         <div class="modal-header">
-                            <h2><strong> Event</strong> Show</h2>
+                            <h2><strong> Social Link</strong> Show</h2>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -302,36 +296,41 @@
                                 <tbody>
 
                                 <tr>
-                                    <td>Image </td>
-                                    <td><img src="{{url($row->image)}}" alt="" style="width:200px;" onerror="this.src='/images/file/default-image.jpg';"></td>
+                                    <td>Facebook</td>
+                                    <td>{{$row->facebook??"N/A"}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Title </td>
-                                    <td>{{$row->title??""}}</td>
+                                    <td>Twitter</td>
+                                    <td>{{$row->twitter??"N/A"}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Place </td>
-                                    <td>{{$row->place??""}}</td>
+                                    <td>Linkedin</td>
+                                    <td>{{$row->linkedin??"N/A"}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Start Date </td>
-                                    <td>{{$row->start_date??""}}</td>
+                                    <td>Google+</td>
+                                    <td>{{$row->gmail??"N/A"}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Time</td>
-                                    <td>{{$row->time??""}}</td>
+                                    <td>Youtube</td>
+                                    <td>{{$row->youtube??"N/A"}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Content</td>
-                                    <td>{!! $row->note !!}</td>
+                                    <td>Skype</td>
+                                    <td>{{$row->skype??"N/A"}}</td>
                                 </tr>
+                                <tr>
+                                    <td>Android</td>
+                                    <td>{{$row->android??"N/A"}}</td>
+                                </tr>
+
                                 <tr>
                                     <td>Status</td>
                                     <td>{{$row->status}}</td>
                                 </tr>
 
                                 <tr>
-                                    <td>Created At </td>
+                                    <td>Time </td>
                                     <td>{{($row->created_at)}}</td>
                                 </tr>
 
@@ -356,7 +355,6 @@
 
 <script src="/admin/plugins/ckeditor/ckeditor.js"></script> <!-- Ckeditor -->
 <script src="/admin/js/forms/editors.js"></script>
-
 
 <script>
     $(document).ready(function(){

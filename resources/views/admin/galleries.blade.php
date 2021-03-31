@@ -82,7 +82,7 @@ padding: 6px !important;
                                                 <div class="icon">
                                                     {{-- <i class="fa fa-file"></i> --}}
 
-                                                <img src="{{url($gallery->file??'')}}" style="width: 100%" alt="">
+                                                <img src="{{url($gallery->file??'')}}" style="width: 100%" alt="" onerror="this.src='/images/file/default-image.jpg';">
                                                 </div>
                                                 <div class="file-name">
                                                     <p class="m-b-5 text-muted">{{$gallery->title}}</p>

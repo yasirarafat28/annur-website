@@ -28,7 +28,7 @@
             <div class="col-lg-8 posts-list">
                <div class="single-post">
                   <div class="feature-img">
-                     <img class="img-fluid" src="{{url($singleBlog->photo??'')}}" alt="">
+                     <img class="img-fluid" src="{{url($singleBlog->photo??'')}}" alt="" onerror="this.src='/images/file/default-image.jpg';">
                   </div>
                   <div class="blog_details">
                      <h2>{{$singleBlog->title??'N/A'}}

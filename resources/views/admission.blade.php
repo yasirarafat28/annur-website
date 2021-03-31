@@ -13,7 +13,7 @@
           <div class="row">
               <div class="col-xl-12">
                   <div class="bradcam_text">
-                      <h3>About Us</h3>
+                      <h3>Addmission</h3>
                   </div>
               </div>
           </div>
@@ -29,11 +29,11 @@
                <div class="single-post">
 
                   <div class="blog_details">
-                     <h2>{{$about->title??'N/A'}}
-                     </h2>
+                     {{-- <h2>{{$admission->class_name??'N/A'}}
+                     </h2> --}}
 
                      <p class="excert">
-                        {!! $about->description??'N/A' !!}
+                        {!! $admission->admission_details??'N/A' !!}
                      </p>
 
 

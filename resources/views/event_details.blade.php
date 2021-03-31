@@ -27,7 +27,7 @@
                 <div class="col-lg-12">
                     <div class="single_event d-flex align-items-center">
                         <div class="thumb">
-                            <img src="{{url($row->image)}}" alt="">
+                            <img src="{{url($row->image)}}" alt="" onerror="this.src='/images/file/default-image.jpg';">
                             <div class="date text-center">
                                 <h4>{{date('d',strtotime($row->created_at??''))}}</h4>
                                 <span>{{date('F, Y',strtotime($row->created_at??''))}}</span>

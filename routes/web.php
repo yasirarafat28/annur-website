@@ -29,6 +29,9 @@ Route::get('/testimonials', 'FrontController@testimonials');
 Route::get('/appointment', 'FrontController@appointment');
 Route::post('/appointment-submit', 'FrontController@appointmentSubmit')->name('appointment.submnit');
 Route::get('/addmissions','FrontController@addmission');
+Route::get('/notice','FrontController@notice');
+Route::get('/notice-details/{id}', 'FrontController@noticeDetails');
+
 
 Route::get('inner-page', function () {
 
@@ -53,6 +56,7 @@ Route::group(['middleware' => ['auth'],'prefix'=>'admin','namespace'=>'Admin'], 
     Route::resource('events', 'EventController');
     Route::resource('admissions', 'AdmissionController');
     Route::resource('notice', 'NoticeController');
+    Route::resource('social-links', 'SocialLinkController');
 });
 
 
