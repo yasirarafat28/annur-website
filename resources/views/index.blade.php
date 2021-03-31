@@ -3,10 +3,10 @@
 
     <!-- slider_area_start -->
     <div class="slider_area">
-        @foreach ($galleries as $gallery)
+        @foreach ($galleries as $key => $gallery)
 
 
-        <div class="{{$gallery['id']==1?'slider_active':''}} owl-carousel">
+        <div class="{{$key==0?'slider_active':''}} owl-carousel">
             <!-- single_carouse -->
             <div class="single_slider  d-flex align-items-center" style="background-image:url({{($gallery->file??'/')}});">
                 <div class="container">
