@@ -28,7 +28,7 @@
                 <div class="col-lg-8 col-md-10">
                     <div class="section_title text-center mb-70">
                         <h3 class="mb-45">Recent Event</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> --}}
                     </div>
                 </div>
             </div>
