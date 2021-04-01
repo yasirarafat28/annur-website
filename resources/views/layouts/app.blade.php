@@ -94,14 +94,24 @@
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </div>
     </header>
     <!-- header-end -->
-
-
+    @php
+        $latest_notice = App\Notice::where('status','active')->orderBy('created_at','DESC')->first();
+    @endphp
+    <div class="container-fluid">
+        <div class="row bg-dark">
+            <marquee>
+                    <p style="font-size: : 20px; color:#fff;">{!! $latest_notice->notice_details??'N/A' !!}</p>
+            </marquee>
+        </div>
+    </div>
     @yield('content')
 
     <!-- footer start -->
