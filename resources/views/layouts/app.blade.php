@@ -45,9 +45,14 @@
                             <div class="header_top_wrap d-flex justify-content-between align-items-center">
                                 @php
                                     $contact = App\Contact::where('status','active')->orderBy('created_at','DESC')->first();
+                                    $currentTime = Carbon\Carbon::now();
+
                                 @endphp
                                 <div class="text_wrap">
                                     <p><span> <i class="fa fa-phone"></i> {{$contact->phone??'N/A'}}    </span> <span> <i class="fa fa-envelope"></i> {{$contact->email??'N/A'}}</span></p>
+                                </div>
+                                <div class="text_wrap">
+                                    <p><span> {{date('d, F, Y',strtotime($currentTime))}}</i> </span> <span></p>
                                 </div>
                                 <div class="text_wrap">
                                     <p><a href="/login"> <i class="ti-user"></i>  Login</a> <a href="/register">Register</a></p>
@@ -78,6 +83,7 @@
                                                 <li><a href="{{url('/blogs')}}">News</a></li>
                                                 {{-- <li><a href="{{url('/events')}}">Event</a></li> --}}
                                                 <li><a href="{{url('/addmissions')}}">Admissions</a></li>
+                                                <li><a href="{{url('/addmissions')}}">Academic</a></li>
                                                 <li><a href="{{url('/contact-us')}}">Contact Us</a></li>
                                                 <li><a href="{{url('/notice')}}">Notice Board</a></li>
                                             </ul>
