@@ -155,44 +155,62 @@
                                         $socialLink = App\SocialLink::where('status','active')->orderBy('created_at','DESC')->first();
                                     @endphp
 
-                                    <ul>
+                                    @if ($socialLink)
+                                        <ul>
+                                            @if ($socialLink->facebook)
                                             <li>
-                                                <a href="{{url($socialLink->facebook??'')}}" target="_blank">
+                                                <a href="{{$socialLink->facebook??'#'}}" target="_blank">
                                                     <i class="fa fa-facebook"></i>
                                                 </a>
                                             </li>
 
-                                        <li>
-                                            <a href="{{url($socialLink->twitter??'#')}}" target="_blank">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url($socialLink->gmail??'#')}}" target="_blank">
-                                                <i class="fa fa-google-plus"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url($socialLink->linkedin??'#')}}" target="_blank">
-                                                <i class="fa fa-linkedin"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url($socialLink->youtube??'#')}}" target="_blank">
-                                                <i class="fa fa-youtube"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url($socialLink->skype??'#')}}" target="_blank">
-                                                <i class="fa fa-skype"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url($socialLink->android??'#')}}" target="_blank">
-                                                <i class="fa fa-android"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+
+                                            @endif
+                                            @if ($socialLink->twitter)
+
+                                            <li>
+                                                <a href="{{$socialLink->twitter??'#'}}" target="_blank">
+                                                    <i class="fa fa-twitter"></i>
+                                                </a>
+                                            </li>
+
+                                            @endif
+                                            @if ($socialLink->gmail)
+                                            <li>
+                                                <a href="{{$socialLink->gmail??'#'}}" target="_blank">
+                                                    <i class="fa fa-envelope"></i>
+                                                </a>
+                                            </li>
+
+                                            @endif
+                                            @if ($socialLink->linkedin)
+                                            <li>
+                                                <a href="{{$socialLink->linkedin??'#'}}" target="_blank">
+                                                    <i class="fa fa-linkedin"></i>
+                                                </a>
+                                            </li>
+
+                                            @endif
+                                            @if ($socialLink->youtube)
+                                            <li>
+                                                <a href="{{$socialLink->youtube??'#'}}" target="_blank">
+                                                    <i class="fa fa-youtube"></i>
+                                                </a>
+                                            </li>
+                                            @endif
+                                            @if ($socialLink->skype)
+                                            <li>
+                                                <a href="{{$socialLink->skype??'#'}}" target="_blank">
+                                                    <i class="fa fa-skype"></i>
+                                                </a>
+                                            </li>
+
+                                            @endif
+                                        </ul>
+
+                                    @endif
+
+
                                 </div>
 
                             </div>
