@@ -109,7 +109,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/admin/blogs">
                     <i class="fas fa-blog"></i>
-                    <span>Blog</span>
+                    <span>News</span>
                 </a>
             </li>
             <li class="nav-item active">

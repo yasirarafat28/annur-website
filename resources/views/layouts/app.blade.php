@@ -65,7 +65,7 @@
                                 <div class="header_left">
                                     <div class="logo">
                                         <a href="{{url('/')}}">
-                                            <img src="/front/img/logo.png" alt="">
+                                            <img src="/front/img/logo.jpg" alt="" style="width:50px;">
                                         </a>
                                     </div>
                                 </div>
@@ -75,8 +75,8 @@
                                             <ul id="navigation">
                                                 <li><a  href="{{url('/')}}">Home</a></li>
                                                 <li><a href="{{url('/about-us')}}">About Us</a></li>
-                                                <li><a href="{{url('/blogs')}}">blog</a></li>
-                                                <li><a href="{{url('/events')}}">Event</a></li>
+                                                <li><a href="{{url('/blogs')}}">News</a></li>
+                                                {{-- <li><a href="{{url('/events')}}">Event</a></li> --}}
                                                 <li><a href="{{url('/addmissions')}}">Admissions</a></li>
                                                 <li><a href="{{url('/contact-us')}}">Contact Us</a></li>
                                                 <li><a href="{{url('/notice')}}">Notice Board</a></li>
@@ -108,7 +108,7 @@
     <div class="container-fluid">
         <div class="row bg-dark">
             <marquee>
-                    <p style="font-size: : 20px; color:#fff;">{!! $latest_notice->notice_details??'N/A' !!}</p>
+                    <p style="font-size: : 20px; color:#fff;">{!! $latest_notice->title??'N/A' !!}</p>
             </marquee>
         </div>
     </div>
@@ -137,16 +137,18 @@
                                     Stay Updated
                                 </h3> --}}
                                 <div class="socail_links">
+
                                     @php
                                         $socialLink = App\SocialLink::where('status','active')->orderBy('created_at','DESC')->first();
-
                                     @endphp
+
                                     <ul>
-                                        <li>
-                                            <a href="{{url($socialLink->facebook??'#')}}" target="_blank">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
+                                            <li>
+                                                <a href="{{url($socialLink->facebook??'')}}" target="_blank">
+                                                    <i class="fa fa-facebook"></i>
+                                                </a>
+                                            </li>
+
                                         <li>
                                             <a href="{{url($socialLink->twitter??'#')}}" target="_blank">
                                                 <i class="fa fa-twitter"></i>

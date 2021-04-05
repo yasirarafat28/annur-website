@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3>Blog</h3>
+                        <h3>News</h3>
                     </div>
                 </div>
             </div>
@@ -228,7 +228,7 @@
                             @php
                             $recent_blogs = App\Blog::where('status','active')->orderBy('created_at','DESC')->skip(0)->take(5)->get();
                             @endphp
-                            <h3 class="widget_title">Recent Post</h3>
+                            <h3 class="widget_title">Recent News</h3>
                             @foreach( $recent_blogs?? array() as $rblog)
                             <div class="media post_item">
                                 <img src="{{url($rblog->photo)}}" style="width:50px;" alt="post" onerror="this.src='/images/file/default-image.jpg';">
