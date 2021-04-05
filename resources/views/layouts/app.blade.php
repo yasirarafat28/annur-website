@@ -54,9 +54,11 @@
                                 <div class="text_wrap">
                                     <p><span> {{date('d, F, Y',strtotime($currentTime))}}</i> </span> <span></p>
                                 </div>
-                                {{-- <div class="text_wrap">
-                                    <p><a href="/login"> <i class="ti-user"></i>  Login</a> <a href="/register">Register</a></p>
-                                </div> --}}
+                                <div class="text_wrap">
+                                    <p><a href="/login"> <i class="ti-user"></i>  Login</a>
+                                        {{-- <a href="/register">Register</a> --}}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
