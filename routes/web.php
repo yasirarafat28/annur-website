@@ -31,6 +31,7 @@ Route::post('/appointment-submit', 'FrontController@appointmentSubmit')->name('a
 Route::get('/addmissions','FrontController@addmission');
 Route::get('/notice','FrontController@notice');
 Route::get('/notice-details/{id}', 'FrontController@noticeDetails');
+Route::get('/department/{type}', 'ContentController@department');
 
 
 Route::get('inner-page', function () {

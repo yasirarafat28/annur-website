@@ -42,7 +42,12 @@ class SocialLinkController extends Controller
 
         ]);
 
-        $social = new SocialLink();
+        $social  = SocialLink::first();
+        if(!$social){
+            $social = new SocialLink();
+
+        }
+
         $social->facebook = $request->facebook;
         $social->twitter = $request->twitter;
         $social->linkedin = $request->linkedin;

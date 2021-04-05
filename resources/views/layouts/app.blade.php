@@ -83,7 +83,14 @@
                                                 <li><a href="{{url('/blogs')}}">News</a></li>
                                                 {{-- <li><a href="{{url('/events')}}">Event</a></li> --}}
                                                 <li><a href="{{url('/addmissions')}}">Admissions</a></li>
-                                                <li><a href="{{url('/addmissions')}}">Academic</a></li>
+                                                {{-- <li><a href="{{url('/addmissions')}}">Academic</a></li> --}}
+                                                <li><a href="#">Academic <i class="ti-angle-down"></i></a>
+                                                    <ul class="submenu">
+                                                        <li><a href="/department/academy_maktab">Maktab Department</a></li>
+                                                        <li><a href="/department/academy_hifz">Hifz Department</a></li>
+                                                        <li><a href="/department/academy_kitab">Kitab Department</a></li>
+                                                    </ul>
+                                                </li>
                                                 <li><a href="{{url('/contact-us')}}">Contact Us</a></li>
                                                 <li><a href="{{url('/notice')}}">Notice Board</a></li>
                                             </ul>
@@ -244,7 +251,9 @@
                                 Reference
                             </h3>
                             <ul>
-                                <li><a href="#">Softwere and Technology</a></li>
+                                <li><a href="#"><i class="fa fa-external-link"></i> Softwere and Technology</a></li>
+                                <li><a href="http://library.annurcomplex.com" target="_blank"><i class="fa fa-external-link"></i> MR Islamic Library</a></li>
+                                <li><a href="http://office.annurcomplex.com/admin/login" target="_blank"><i class="fa fa-external-link"></i> Management System</a></li>
 
                             </ul>
                         </div>

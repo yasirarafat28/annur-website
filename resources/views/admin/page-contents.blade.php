@@ -76,7 +76,7 @@
                             @foreach($records??array() as $item)
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td>{{$item->slug}}</td>
+                                    <td>{{$item->type}}</td>
                                     <td>{{$item->title}}</td>
 
                                     <td>

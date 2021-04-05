@@ -73,12 +73,6 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            {{-- <li class="nav-item active">
-                <a class="nav-link" href="/admin/testimonials">
-                    <i class="fas fa-coins"></i>
-                    <span>Testimonials</span>
-                </a>
-            </li> --}}
 
             {{-- <li class="nav-item active">
                 <a class="nav-link" href="/admin/successful-treatments">
@@ -93,13 +87,6 @@
                     <span>Inquiry</span>
                 </a>
             </li>
-
-            {{-- <li class="nav-item active">
-                <a class="nav-link" href="/admin/appointments">
-                    <i class="fas fa-coins"></i>
-                    <span>Appointments</span>
-                </a>
-            </li> --}}
             <li class="nav-item active">
                 <a class="nav-link" href="/admin/galleries">
                     <i class="fas fa-image"></i>
@@ -136,7 +123,12 @@
                     <span>Contact</span>
                 </a>
             </li>
+
             <li class="nav-item active">
+                <a class="nav-link" href="/admin/page-contents">
+                    <i class="fas fa-coins"></i>
+                    <span>Page Content</span>
+                </a>
                 <a class="nav-link" href="/admin/abouts">
                     <i class="far fa-address-book"></i>
                     <span>About</span>

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Content;
 use App\Http\Controllers\Controller;
-use App\PageContent;
 use Illuminate\Http\Request;
 
 class PageContentController extends Controller
@@ -15,7 +15,7 @@ class PageContentController extends Controller
      */
     public function index()
     {
-        $records = PageContent::get();
+        $records = Content::get();
         return view('admin.page-contents',compact('records'));
     }
 
@@ -77,7 +77,7 @@ class PageContentController extends Controller
             'content'=>'required'
         ]);
 
-        $page = PageContent::find($id);
+        $page = Content::find($id);
         $page->content = $request->content;
         $page->save();
 

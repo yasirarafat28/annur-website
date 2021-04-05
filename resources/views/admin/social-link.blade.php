@@ -43,7 +43,11 @@
                                 <h2>Socail Link List</h2>
                             </div>
                             <div class="float-right">
+                                @if (!sizeof($records))
                                 <a  data-toggle="modal" data-target="#socialLinkCreateModal" class="btn btn-primary"><i class="fas fa-fw fa-plus"> </i> Add </i></a>
+
+
+                                @endif
                             </div>
                         </div>
 
