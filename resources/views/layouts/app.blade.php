@@ -151,7 +151,7 @@
                                 {{-- <h3 class="footer_title">
                                     Stay Updated
                                 </h3> --}}
-                                <div class="socail_links">
+                                {{-- <div class="socail_links">
 
                                     @php
                                         $socialLink = App\SocialLink::where('status','active')->orderBy('created_at','DESC')->first();
@@ -213,10 +213,10 @@
                                     @endif
 
 
-                                </div>
+                                </div> --}}
 
                             </div>
-                        </div>
+                        </div>*
                     </div>
                 </div>
                 <div class="row">
@@ -247,6 +247,69 @@
                                         {{-- <p>Send us your query anytime!</p> --}}
                                     </div>
                                 </div>
+                            </div>
+                            <div class="socail_links">
+
+                                @php
+                                    $socialLink = App\SocialLink::where('status','active')->orderBy('created_at','DESC')->first();
+                                @endphp
+
+                                @if ($socialLink)
+                                    <ul>
+                                        @if ($socialLink->facebook)
+                                        <li>
+                                            <a href="{{$socialLink->facebook??'#'}}" target="_blank">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+
+
+                                        @endif
+                                        @if ($socialLink->twitter)
+
+                                        <li>
+                                            <a href="{{$socialLink->twitter??'#'}}" target="_blank">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+
+                                        @endif
+                                        {{-- @if ($socialLink->gmail)
+                                        <li>
+                                            <a href="{{$socialLink->gmail??'#'}}" target="_blank">
+                                                <i class="fa fa-envelope"></i>
+                                            </a>
+                                        </li>
+
+                                        @endif --}}
+                                        @if ($socialLink->linkedin)
+                                        <li>
+                                            <a href="{{$socialLink->linkedin??'#'}}" target="_blank">
+                                                <i class="fa fa-linkedin"></i>
+                                            </a>
+                                        </li>
+
+                                        @endif
+                                        @if ($socialLink->youtube)
+                                        <li>
+                                            <a href="{{$socialLink->youtube??'#'}}" target="_blank">
+                                                <i class="fa fa-youtube"></i>
+                                            </a>
+                                        </li>
+                                        @endif
+                                        @if ($socialLink->skype)
+                                        <li>
+                                            <a href="{{$socialLink->skype??'#'}}" target="_blank">
+                                                <i class="fa fa-skype"></i>
+                                            </a>
+                                        </li>
+
+                                        @endif
+                                    </ul>
+
+                                @endif
+
+
                             </div>
                         </div>
                     </div>

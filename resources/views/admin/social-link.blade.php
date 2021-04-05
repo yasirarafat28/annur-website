@@ -58,7 +58,7 @@
                             <tr>
                                 <th> # </th>
                                 <th>Facebook</th>
-                                <th>Google+</th>
+                                <th>Linkdin</th>
                                 <th>Youtube  </th>
                                 <th>Status  </th>
                                 <th>Action</th>
@@ -71,7 +71,7 @@
                                 <tr>
                                     <td>{{$loop->iteration}} </td>
                                     <td>{{$item->facebook??'N/A'}}</td>
-                                    <td>{{$item->gmail??'N/A'}}</td>
+                                    <td>{{$item->linkedin??'N/A'}}</td>
                                     <td>{{$item->youtube??'N/A'}}</td>
                                     <td>{{$item->status}}</td>
                                     <td>
@@ -143,12 +143,12 @@
                             </div>
 
 
-                            <div class="col-lg-12 col-md-12 col-sm-12">
+                            {{-- <div class="col-lg-12 col-md-12 col-sm-12">
                                 <div class="form-group">
                                     <label for=""><small>Google+</small></label>
                                     <input type="text" placeholder="Google+" name="gmail" class="form-control">
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <div class="form-group">
                                     <label for=""><small>Youtube</small></label>
@@ -230,12 +230,12 @@
                                 </div>
 
 
-                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                {{-- <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
                                         <label for=""><small>E-mail</small></label>
                                         <input type="text" placeholder="E-mail" name="gmail" class="form-control" value="{{$row->gmail}}">
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
                                         <label for=""><small>Youtube</small></label>
@@ -311,10 +311,10 @@
                                     <td>Linkedin</td>
                                     <td>{{$row->linkedin??"N/A"}}</td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                     <td>Google+</td>
                                     <td>{{$row->gmail??"N/A"}}</td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                     <td>Youtube</td>
                                     <td>{{$row->youtube??"N/A"}}</td>

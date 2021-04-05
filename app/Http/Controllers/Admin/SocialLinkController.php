@@ -51,7 +51,7 @@ class SocialLinkController extends Controller
         $social->facebook = $request->facebook;
         $social->twitter = $request->twitter;
         $social->linkedin = $request->linkedin;
-        $social->gmail = $request->gmail;
+        // $social->gmail = $request->gmail;
         $social->youtube = $request->youtube;
         $social->skype = $request->skype;
         $social->android = $request->android;
@@ -99,7 +99,7 @@ class SocialLinkController extends Controller
             $social->facebook = $request->facebook;
             $social->twitter = $request->twitter;
             $social->linkedin = $request->linkedin;
-            $social->gmail = $request->gmail;
+            // $social->gmail = $request->gmail;
             $social->youtube = $request->youtube;
             $social->skype = $request->skype;
             $social->android = $request->android;
