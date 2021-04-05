@@ -2604,7 +2604,7 @@ h3 {
   -moz-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  border-radius: 50% !important;
+  border-radius: 50%;
 }
 
 /* line 208, ../../Arafath/CL/january 2020/243.Education/HTML/scss/_footer.scss */
