@@ -3,12 +3,13 @@
 
     <!-- slider_area_start -->
     <div class="slider_area">
-        @foreach ($galleries as $key => $gallery)
 
 
-        <div class="{{$key==0?'slider_active':''}} owl-carousel">
+
+        <div class="slider_active owl-carousel">
+            @foreach ($galleries as $key => $gallery)
             <!-- single_carouse -->
-            <div class="single_slider  d-flex align-items-center" style="background-image:url({{($gallery->file??'/')}});">
+            <div class="{{$key==0?'slider_active':''}} single_slider  d-flex align-items-center" style="background-image:url({{$gallery->file??''}});">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
@@ -56,8 +57,9 @@
                 </div>
             </div> --}}
             <!--/ single_carouse -->
+            @endforeach
         </div>
-        @endforeach
+
     </div>
     <!-- slider_area_end -->
 
@@ -454,7 +456,7 @@
                     <div class="single__news">
                         <div class="thumb">
                             <a href="{{url('/single-blog/'.$blog->id)}}">
-                                <img src="{{url($blog->photo)}}" alt="">
+                                <img src="{{url($blog->photo)}}" alt="" style="width: 400px;">
                             </a>
                             <span class="badge"></span>
                         </div>
@@ -466,6 +468,7 @@
 
                             {{-- <span> <i class="flaticon-comment"></i> 01 comments</span> --}}
                             </p>
+                            <a class="btn btn-primary" href="{{url('/single-blog/'.$blog->id)}}" style="color:#fff !important">Details</a>
                         </div>
                     </div>
                 </div>

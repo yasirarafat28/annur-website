@@ -30,7 +30,7 @@
                         @foreach($blogs?? array() as $blog)
                         <article class="blog_item">
                             <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="{{url($blog->photo)}}" alt="" onerror="this.src='/images/file/default-image.jpg';">
+                                <img class="card-img rounded-0" src="{{url($blog->photo)}}" alt="" onerror="this.src='/images/file/default-image.jpg';" style="width:350px">
                                 <a href="{{url('/single-blog/'.$blog->id)}}" class="blog_item_date">
                                     <h3>{{date('d',strtotime($blog->created_at))}}</h3>
                                     <p>{{date('F Y',strtotime($blog->created_at))}}</p>
@@ -46,6 +46,8 @@
                                     <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
                                     <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
                                 </ul> --}}
+                                <a class="btn btn-primary" href="{{url('/single-blog/'.$blog->id)}}" style="color:#fff !important">Details</a>
+
                             </div>
                         </article>
                         @endforeach
