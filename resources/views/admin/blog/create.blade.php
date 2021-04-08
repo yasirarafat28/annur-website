@@ -15,12 +15,12 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h3><small><strong>Blog</strong> Add</small></h3>
+                    <h3><small><strong>News</strong> Add</small></h3>
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
                     <ul class="breadcrumb float-md-right">
                         {{-- <li class="breadcrumb-item"><a href="#"><i class="zmdi zmdi-home"></i></a></li> --}}
-                        <li class="breadcrumb-item"><a href="javascript:void(0);">Blog Add</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">News Add</a></li>
                     </ul>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                         <div class="header">
                             <div class="clearfix">
                                 <div class="float-left">
-                                    <h2><strong>Blog</strong> Add</h2>
+                                    <h2><strong>News</strong> Add</h2>
                                 </div>
                                 <div class="float-right">
                                 </div>

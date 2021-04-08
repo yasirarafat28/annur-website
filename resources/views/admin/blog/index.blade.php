@@ -25,11 +25,11 @@
         @endif
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Blog List</h1>
+            <h1 class="h3 mb-0 text-gray-800">News List</h1>
 
             <ul class="breadcrumb float-md-right">
                 {{-- <li class="breadcrumb-item"><a href="#"><i class="zmdi zmdi-home"></i> </a></li> --}}
-                <li class="breadcrumb-item"><a href="javascript:void(0);">Blog List</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0);">News List</a></li>
             </ul>
         </div>
 
@@ -40,7 +40,7 @@
                     <div class="header">
                         <div class="clearfix">
                             <div class="float-left">
-                                <h2>Blog List</h2>
+                                <h2>News List</h2>
                             </div>
                             <div class="float-right">
                                 <a href="/admin/blogs/create" class="btn btn-primary"> <i class="fas fa-fw fa-plus"></i> Add </a>
@@ -113,7 +113,7 @@
             <div class="modal-content">
 
                         <div class="modal-header">
-                            <h2><strong> Blog</strong> Edit</h2>
+                            <h2><strong> News</strong> Edit</h2>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -176,7 +176,7 @@
 
 
                         <div class="modal-header">
-                            <h2><strong> Blog</strong> Show</h2>
+                            <h2><strong> News</strong> Show</h2>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
