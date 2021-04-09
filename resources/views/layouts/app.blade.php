@@ -225,7 +225,7 @@
                             <h3 class="footer_title">
                                 Contact Us
                             </h3>
-                            <div class="col-md-12 offset-md-1">
+                            <div class="col-md-12">
                                 <div class="media col-md-3">
                                     {{-- <span class="contact-info__icon"><i class="ti-home"></i></span> --}}
                                     <div class="media-body">
