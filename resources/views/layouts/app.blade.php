@@ -225,29 +225,29 @@
                             <h3 class="footer_title">
                                 Contact Us
                             </h3>
-                            <div class="col-lg-12 offset-lg-1">
-                                <div class="media contact-info col-lg-3">
+                            <div class="col-md-12 offset-md-1">
+                                <div class="media col-md-3">
                                     {{-- <span class="contact-info__icon"><i class="ti-home"></i></span> --}}
                                     <div class="media-body">
-                                        <h1>নুরুল উলুম মাদরাসা</h1>
+                                        <h3>নুরুল উলুম মাদরাসা</h3>
 
                                     </div>
                                 </div>
-                                <div class="media contact-info col-lg-3">
+                                <div class="media contact-info col-md-3">
                                     <span class="contact-info__icon"><i class="ti-home"></i></span>
                                     <div class="media-body">
                                         <h3>{!! $contact->address??'N/A' !!}</h3>
                                         {{-- <p>Rosemead, CA 91770</p> --}}
                                     </div>
                                 </div>
-                                <div class="media contact-info  col-lg-3">
+                                <div class="media contact-info  col-md-3">
                                     <span class="contact-info__icon"><i class="ti-tablet"></i></span>
                                     <div class="media-body">
                                         <h3>{{$contact->phone??'N/A'}}</h3>
                                         {{-- <p>Mon to Fri 9am to 6pm</p> --}}
                                     </div>
                                 </div>
-                                <div class="media contact-info  col-lg-3">
+                                <div class="media contact-info  col-md-3">
                                     <span class="contact-info__icon"><i class="ti-email"></i></span>
                                     <div class="media-body">
                                         <h3>{{$contact->email??'N/A'}}</h3>
