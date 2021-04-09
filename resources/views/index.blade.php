@@ -2,64 +2,70 @@
 @section('content')
 
     <!-- slider_area_start -->
-    <div class="slider_area">
-
-
-
-        <div class="slider_active owl-carousel">
-            @foreach ($galleries as $key => $gallery)
-            <!-- single_carouse -->
-            <div class="{{$key==0?'slider_active':''}} single_slider  d-flex align-items-center" style="background-image:url({{$gallery->file??''}});">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="slider_text ">
-                                <h3>{{$gallery->title??'N/A'}}</h3>
-                                {{-- <a href="#" class="boxed-btn3">Get Start</a>
-                                <a href="#" class="boxed-btn4">Take a tour</a> --}}
+    <div class="row container">
+        <div class="col-md-10">
+            <div class="slider_area">
+                <div class="slider_active owl-carousel">
+                    @foreach ($galleries as $key => $gallery)
+                    <!-- single_carouse -->
+                    <div class="{{$key==0?'slider_active':''}} single_slider  d-flex align-items-center" style="background-image:url({{$gallery->file??''}});">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="slider_text ">
+                                        <h3>{{$gallery->title??'N/A'}}</h3>
+                                        {{-- <a href="#" class="boxed-btn3">Get Start</a>
+                                        <a href="#" class="boxed-btn4">Take a tour</a> --}}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!--/ single_carouse -->
+                    <!-- single_carouse -->
+                    {{-- <div class="single_slider  d-flex align-items-center slider_bg_2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="slider_text ">
+                                        <h3>Boost up your skills <br>
+                                            with a new way of <br>
+                                            learning.</h3>
+                                        <a href="#" class="boxed-btn3">Get Start</a>
+                                        <a href="#" class="boxed-btn4">Take a tour</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                    <!--/ single_carouse -->
+                    <!-- single_carouse -->
+                    {{-- <div class="single_slider  d-flex align-items-center slider_bg_1">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="slider_text ">
+                                        <h3>Boost up your skills <br>
+                                            with a new way of <br>
+                                            learning.</h3>
+                                        <a href="#" class="boxed-btn3">Get Start</a>
+                                        <a href="#" class="boxed-btn4">Take a tour</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                    <!--/ single_carouse -->
+                    @endforeach
                 </div>
             </div>
-            <!--/ single_carouse -->
-            <!-- single_carouse -->
-            {{-- <div class="single_slider  d-flex align-items-center slider_bg_2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="slider_text ">
-                                <h3>Boost up your skills <br>
-                                    with a new way of <br>
-                                    learning.</h3>
-                                <a href="#" class="boxed-btn3">Get Start</a>
-                                <a href="#" class="boxed-btn4">Take a tour</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-            <!--/ single_carouse -->
-            <!-- single_carouse -->
-            {{-- <div class="single_slider  d-flex align-items-center slider_bg_1">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="slider_text ">
-                                <h3>Boost up your skills <br>
-                                    with a new way of <br>
-                                    learning.</h3>
-                                <a href="#" class="boxed-btn3">Get Start</a>
-                                <a href="#" class="boxed-btn4">Take a tour</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-            <!--/ single_carouse -->
-            @endforeach
         </div>
+        <div class="col-md-2">
+            <div class="center LandingPageTile" style="float: left;border: 1px solid #ddd;margin-left:10px;border-bottom: 10px solid #ddd; margin-bottom: 60px;">
+                <img style="height:345px;width:345px; margin-top:10px;margin-left:10px;margin-right:10px;margin-bottom: 10px;" src="{{url($advertisment->image)}}" onerror="this.src='/images/file/default-image.jpg';">
 
+            </div>
+        </div>
     </div>
     <!-- slider_area_end -->
 
@@ -444,7 +450,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
                     <div class="section_title text-center mb-70">
-                        <h3 class="mb-45">Recent News</h3>
+                        <h3 class="mb-45" style="text-align: center;background-color: #895621;color: #fff;padding-top: 6px;padding-bottom:0px;">Recent News</h3>
                         {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> --}}
                     </div>
                 </div>
@@ -469,6 +475,60 @@
                             {{-- <span> <i class="flaticon-comment"></i> 01 comments</span> --}}
                             </p>
                             <a class="btn btn-primary" href="{{url('/single-blog/'.$blog->id)}}" style="color:#fff !important">Details</a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                {{-- <div class="col-md-6">
+                    <div class="single__news">
+                        <div class="thumb">
+                            <a href="single-blog.html">
+                                <img src="/front/img/news/2.png" alt="">
+                            </a>
+                            <span class="badge bandge_2">Hall Life</span>
+                        </div>
+                        <div class="news_info">
+                            <a href="single-blog.html">
+                                <h4>Those Other College Expenses You
+                                    Aren’t Thinking About</h4>
+                            </a>
+                            <p class="d-flex align-items-center"> <span><i class="flaticon-calendar-1"></i> May 10, 2020</span>
+
+                            <span> <i class="flaticon-comment"></i> 01 comments</span>
+                            </p>
+                        </div>
+                    </div>
+                </div> --}}
+            </div>
+
+        </div>
+    </div>
+
+    <!-- recent_news_area_end  -->
+
+    <!-- recent_news_area_start  -->
+    <div class="recent_news_area section__padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="section_title text-center mb-70">
+                        <h3 class="mb-45" style="text-align: center;background-color: #895621;color: #fff;padding-top: 6px;padding-bottom:0px;">Album</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach($albums?? array() as $album)
+                <div class="col-md-3">
+                    <div class="single__news">
+                        <div class="thumb">
+                            <img src="{{url($album->image)}}" alt="" style="height:240px;">
+                        </div>
+                        <div class="news_info">
+                                <h4>{{$album->title??'N/A'}}</h4>
+                            <p class=""> {{date('d F, Y',strtotime($blog->created_at))}}</span>
+
+                            {{-- <span> <i class="flaticon-comment"></i> 01 comments</span> --}}
+                            </p>
                         </div>
                     </div>
                 </div>

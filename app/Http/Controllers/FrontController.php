@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\About;
 use App\Admission;
+use App\Advertisement;
+use App\Album;
 use App\Appointment;
 use App\Blog;
 use App\Contact;
@@ -31,8 +33,11 @@ class FrontController extends Controller
         $galleries = Gallery::where('status','active')->orderBy('created_at','DESC')->take(3)->get();
         $blogs = Blog::where('status','active')->orderBy('created_at','DESC')->take(2)->get();
         $events = Event::where('status','active')->orderBy('created_at','DESC')->take(3)->get();
+        $advertisment = Advertisement::where('status','active')->orderBy('created_at','DESC')->first();
+        $albums = Album::where('status','active')->orderBy('created_at','DESC')->take(4)->get();
 
-        return view('index',compact('galleries','homepage','blogs','events'));
+
+        return view('index',compact('galleries','homepage','blogs','events','advertisment','albums'));
     }
 
     public function testimonials(){

@@ -8,16 +8,8 @@
 @section('content')
 
     <!-- bradcam_area_start  -->
-    <div class="bradcam_area breadcam_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="bradcam_text">
-                        <h3>event details</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="bradcam_text mt-1">
+        <h3 style="text-align: center;background-color: #895621;color: #fff;padding-top: 6px;padding-bottom:0px;">Event Details</h3>
     </div>
     <!-- bradcam_area_end  -->
 

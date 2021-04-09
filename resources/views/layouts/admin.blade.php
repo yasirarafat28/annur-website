@@ -94,6 +94,18 @@
                 </a>
             </li>
             <li class="nav-item active">
+                <a class="nav-link" href="/admin/albums">
+                    <i class="fas fa-image"></i>
+                    <span>Album</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/admin/advertisements">
+                    <i class="fas fa-image"></i>
+                    <span>advertisement</span>
+                </a>
+            </li>
+            <li class="nav-item active">
                 <a class="nav-link" href="/admin/blogs">
                     <i class="fas fa-blog"></i>
                     <span>News</span>

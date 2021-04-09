@@ -58,6 +58,8 @@ Route::group(['middleware' => ['auth'],'prefix'=>'admin','namespace'=>'Admin'], 
     Route::resource('admissions', 'AdmissionController');
     Route::resource('notice', 'NoticeController');
     Route::resource('social-links', 'SocialLinkController');
+    Route::resource('albums', 'AlbumController');
+    Route::resource('advertisements', 'AdvertisementController');
 });
 
 

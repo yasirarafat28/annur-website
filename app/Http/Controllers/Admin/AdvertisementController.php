@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Gallery;
+use App\Advertisement;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class GalleryController extends Controller
+class AdvertisementController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        //
+        $records = Advertisement::orderBy('created_at','DESC')->get();
 
-        $records = Gallery::orderBy('created_at','DESC')->get();
-        //  $records = $records->paginate(25);
-        return view('admin.galleries',compact('records'));
+        return view('admin.advertisement',compact('records'));
     }
 
     /**
@@ -40,23 +38,25 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $advertisment = Advertisement::first();
+        if(!$advertisment){
+            $advertisment = new Advertisement();
+        }
 
-        $gallery = new Gallery();
-        $gallery->title = $request->title;
+        $advertisment->title = $request->title;
 
-        if ($request->hasFile('file')) {
+        if ($request->hasFile('image')) {
 
-            $image      = $request->file('file');
+            $image      = $request->file('image');
             $imageName  = 'user_'.date('ymdhis').'.'.$image->getClientOriginalExtension();
             $path       = 'images/file/';
             $image->move($path, $imageName);
             $imageUrl   = $path . $imageName;
-            $gallery->file = $imageUrl;
+            $advertisment->image = $imageUrl;
         }
-        $gallery->status = 'active';
-        $gallery->save();
-        return back()->withSuccess('Image Add Successfull !');
+        $advertisment->status = 'active';
+        $advertisment->save();
+        return back()->withSuccess('Advertisement Add Successfull !');
     }
 
     /**
@@ -90,21 +90,21 @@ class GalleryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $gallery = Gallery::find($id);
-        $gallery->title = $request->title;
+        $advertisment = Advertisement::find($id);
+        $advertisment->title = $request->title;
 
-        if ($request->hasFile('file')) {
+        if ($request->hasFile('image')) {
 
-            $image      = $request->file('file');
+            $image      = $request->file('image');
             $imageName  = 'user_'.date('ymdhis').'.'.$image->getClientOriginalExtension();
             $path       = 'images/file/';
             $image->move($path, $imageName);
             $imageUrl   = $path . $imageName;
-            $gallery->file = $imageUrl ;
+            $advertisment->image = $imageUrl;
         }
-        $gallery->status = $request->status;
-        $gallery->save();
-        return back()->withSuccess('Image Update Successfull !');
+        $advertisment->status = $request->status;
+        $advertisment->save();
+        return back()->withSuccess('Advertisement Update Successfull !');
     }
 
     /**
@@ -115,8 +115,7 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        //
-        Gallery::destroy($id);
-        return back()->withSuccess('Image Delete Successfull !');
+        Advertisement::destroy($id);
+        return back()->withSuccess('Advertisement Delete Successfull !');
     }
 }

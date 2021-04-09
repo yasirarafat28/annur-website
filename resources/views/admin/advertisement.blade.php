@@ -31,43 +31,45 @@ padding: 6px !important;
         @endif
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Galleries</h1>
+            <h1 class="h3 mb-0 text-gray-800">Advertisement</h1>
 
             <ul class="breadcrumb float-md-right">
                 <li class="breadcrumb-item"><a href="#"><i class="zmdi zmdi-home"></i> Home</a></li>
-                <li class="breadcrumb-item"><a href="javascript:void(0);">Galleries</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Advertisement</a></li>
             </ul>
         </div>
 
         <!-- Exportable Table -->
         <div class="row clearfix">
-            <div class="col-lg-12">
+            <div class="col-md-12">
                 <div class="card shadow">
                         <div class="header">
                             <div class="clearfix">
                                 <div class="float-left">
-                                    <h2>Galleries  </h2>
+                                    <h2>Advertisement </h2>
                                 </div>
+                                @if(!sizeof($records))
                                 <div class="float-right">
-                                    <a data-toggle="modal" data-target="#largeModal" class="btn btn-primary"> <i class="fas fa-fw fa-plus"></i> Add Gallery </a>
+                                    <a data-toggle="modal" data-target="#largeModal" class="btn btn-primary"> <i class="fas fa-fw fa-plus"></i> Add </a>
                                 </div>
+                                @endif
                             </div>
 
                         </div>
                     <div class="body d-flex">
-                        @forelse ($records??array() as $gallery)
+                        @forelse ($records??array() as $advertisement)
                             <div class="col-lg-3 col-md-4 col-sm-12">
                                 <div class="">
                                     <div class="card-body file_manager">
                                         <div class="file">
-                                            <a target="_blank" href="{{url($gallery->file??'')}}">
+                                            <a target="_blank" href="{{url($advertisement->image??'')}}">
                                                 <div class="hover">
                                                     <div class="d-flex">
-                                                    <button data-toggle="modal" data-target="#largeEditModal{{$gallery->id}}" class="dropdown-item" title="Edit"><i class="fa fa-edit"> </i> Edit</button>
+                                                    <button data-toggle="modal" data-target="#largeEditModal{{$advertisement->id}}" class="dropdown-item" title="Edit"><i class="fa fa-edit"> </i> Edit</button>
 
                                                         {!! Form::open([
                                                             'method'=>'DELETE',
-                                                            'url' => ['/admin/galleries', $gallery->id],
+                                                            'url' => ['/admin/advertisements', $advertisement->id],
                                                             'style' => 'display:inline'
                                                             ]) !!}
                                                             {!! Form::button('<i class="fa fa-trash"></i> Delete', array(
@@ -82,13 +84,13 @@ padding: 6px !important;
                                                 <div class="icon">
                                                     {{-- <i class="fa fa-file"></i> --}}
 
-                                                <img src="{{url($gallery->file??'')}}" style="width: 100%" alt="" onerror="this.src='/images/file/default-image.jpg';">
+                                                <img src="{{url($advertisement->image??'')}}" style="width: 100%" alt="" onerror="this.src='/images/file/default-image.jpg';">
                                                 </div>
                                                 <div class="file-name">
-                                                    <p class="m-b-5 text-muted">{{$gallery->title}}</p>
+                                                    <p class="m-b-5 text-muted">{{$advertisement->title}}</p>
                                                     <small>
                                                         {{-- Size: {{number_format($gallery->size/1000000,2)}} MB  --}}
-                                                        <span class="date text-muted">{{date('F d, Y',strtotime($gallery->created_at))}}</span></small>
+                                                        <span class="date text-muted">{{date('F d, Y',strtotime($advertisement->created_at))}}</span></small>
                                                 </div>
                                             </a>
 
@@ -119,13 +121,13 @@ padding: 6px !important;
         <div class="modal-content">
 
                     <div class="modal-header">
-                        <h2><strong>Add  Gallery</strong></h2>
+                        <h2><strong>Add  Advertisement</strong></h2>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="{{url('admin/galleries')}}" method="POST" enctype="multipart/form-data">
+                        <form action="{{url('admin/advertisements')}}" method="POST" enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="row clearfix">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -138,8 +140,8 @@ padding: 6px !important;
 
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
-                                        <label for=""><small>Photo</small></label>
-                                        <input type="file" class="form-control" placeholder="Photo" name="file">
+                                        <label for=""><small>Image</small></label>
+                                        <input type="file" class="form-control" placeholder="image" name="image">
                                     </div>
                                 </div>
                                 <div class="col-md-12 text-center">
@@ -161,13 +163,13 @@ padding: 6px !important;
                         <div class="modal-content">
 
                             <div class="modal-header">
-                                <h2><strong> Gallery</strong> Edit</h2>
+                                <h2><strong> Advertisement</strong> Edit</h2>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{url('admin/galleries/'.$item->id)}}" method="POST" enctype="multipart/form-data">
+                                <form action="{{url('admin/advertisements/'.$item->id)}}" method="POST" enctype="multipart/form-data">
                                     {{csrf_field()}}
 
                                     {{method_field('PATCH')}}
@@ -183,8 +185,8 @@ padding: 6px !important;
 
                                         <div class="col-lg-12 col-md-12">
                                             <div class="form-group">
-                                                <label for=""><small>Photo</small></label>
-                                                <input type="file" class="form-control" placeholder="Photo" name="file">
+                                                <label for=""><small>Image</small></label>
+                                                <input type="file" class="form-control" placeholder="Photo" name="image">
                                             </div>
                                         </div>
                                         <div class="col-lg-12 col-md-12">

@@ -2,24 +2,22 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Gallery;
+use App\Album;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class GalleryController extends Controller
+class AlbumController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        //
+        $records = Album::orderBy('created_at','DESC')->get();
 
-        $records = Gallery::orderBy('created_at','DESC')->get();
-        //  $records = $records->paginate(25);
-        return view('admin.galleries',compact('records'));
+        return view('admin.album',compact('records'));
     }
 
     /**
@@ -40,22 +38,20 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $album = new Album();
+        $album->title = $request->title;
 
-        $gallery = new Gallery();
-        $gallery->title = $request->title;
+        if ($request->hasFile('image')) {
 
-        if ($request->hasFile('file')) {
-
-            $image      = $request->file('file');
+            $image      = $request->file('image');
             $imageName  = 'user_'.date('ymdhis').'.'.$image->getClientOriginalExtension();
             $path       = 'images/file/';
             $image->move($path, $imageName);
             $imageUrl   = $path . $imageName;
-            $gallery->file = $imageUrl;
+            $album->image = $imageUrl;
         }
-        $gallery->status = 'active';
-        $gallery->save();
+        $album->status = 'active';
+        $album->save();
         return back()->withSuccess('Image Add Successfull !');
     }
 
@@ -90,21 +86,21 @@ class GalleryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $gallery = Gallery::find($id);
-        $gallery->title = $request->title;
+        $album = Album::find($id);
+        $album->title = $request->title;
 
-        if ($request->hasFile('file')) {
+        if ($request->hasFile('image')) {
 
-            $image      = $request->file('file');
+            $image      = $request->file('image');
             $imageName  = 'user_'.date('ymdhis').'.'.$image->getClientOriginalExtension();
             $path       = 'images/file/';
             $image->move($path, $imageName);
             $imageUrl   = $path . $imageName;
-            $gallery->file = $imageUrl ;
+            $album->image = $imageUrl;
         }
-        $gallery->status = $request->status;
-        $gallery->save();
-        return back()->withSuccess('Image Update Successfull !');
+        $album->status = $request->status;
+        $album->save();
+        return back()->withSuccess('Image update Successfull !');
     }
 
     /**
@@ -115,8 +111,7 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        //
-        Gallery::destroy($id);
+        Album::destroy($id);
         return back()->withSuccess('Image Delete Successfull !');
     }
 }
