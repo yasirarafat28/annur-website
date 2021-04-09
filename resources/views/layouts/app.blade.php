@@ -52,7 +52,7 @@
                                     <p><span> <i class="fa fa-phone"></i> {{$contact->phone??'N/A'}}    </span> <span> <i class="fa fa-envelope"></i> {{$contact->email??'N/A'}}</span></p>
                                 </div>
                                 <div class="text_wrap text-right">
-                                    <p><span> {{date('d, F, Y',strtotime($currentTime))}}</i> </span> <span></p>
+                                    <p><span> {{date('l, jS F, Y',strtotime($currentTime))}}</i> </span> <span></p>
                                 </div>
                                 {{-- <div class="text_wrap">
                                     <p><a href="/login"> <i class="ti-user"></i>  Login</a>
