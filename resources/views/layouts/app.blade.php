@@ -229,7 +229,7 @@
                                 <div class="media">
                                     {{-- <span class="contact-info__icon"><i class="ti-home"></i></span> --}}
                                     <div class="media-body">
-                                        <h3>নুরুল উলুম মাদরাসা</h3>
+                                        <h3 style="color:#fff;">নুরুল উলুম মাদরাসা</h3>
 
                                     </div>
                                 </div>
