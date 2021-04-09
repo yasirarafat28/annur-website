@@ -51,14 +51,14 @@
                                 <div class="text_wrap">
                                     <p><span> <i class="fa fa-phone"></i> {{$contact->phone??'N/A'}}    </span> <span> <i class="fa fa-envelope"></i> {{$contact->email??'N/A'}}</span></p>
                                 </div>
-                                <div class="text_wrap">
+                                <div class="text_wrap text-right">
                                     <p><span> {{date('d, F, Y',strtotime($currentTime))}}</i> </span> <span></p>
                                 </div>
-                                <div class="text_wrap">
+                                {{-- <div class="text_wrap">
                                     <p><a href="/login"> <i class="ti-user"></i>  Login</a>
-                                        {{-- <a href="/register">Register</a> --}}
+                                        <a href="/register">Register</a>
                                     </p>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                                 <div class="header_left">
                                     <div class="logo">
                                         <a href="{{url('/')}}">
-                                            <img src="/front/img/logo.jpg" alt="" style="width:50px;">
+                                            <img src="/front/img/logo.jpg" alt="" style="width:100px;">
                                         </a>
                                     </div>
                                 </div>
@@ -95,6 +95,7 @@
                                                 </li>
                                                 <li><a href="{{url('/contact-us')}}">Contact Us</a></li>
                                                 <li><a href="{{url('/notice')}}">Notice Board</a></li>
+                                                <li><a href="/login"> <i class="ti-user"></i>  Login</a></li>
                                             </ul>
                                         </nav>
                                     </div>

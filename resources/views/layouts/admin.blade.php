@@ -9,9 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Annur</title>
+    <title>নুরুল উলুম মাদরাসা</title>
 
-    <!-- Custom fonts for this template-->
+    <!-- CuAnnurstom fonts for this template-->
     <link href="/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" media="all">
     <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" media="all">
@@ -57,7 +57,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Annur <sup></sup></div>
+                <div class="sidebar-brand-text mx-3">নুরুল উলুম মাদরাসা <sup></sup></div>
             </a>
 
             <!-- Divider -->
