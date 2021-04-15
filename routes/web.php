@@ -40,7 +40,7 @@ Route::get('inner-page', function () {
 
 });
 
-Auth::routes();
+Auth::routes(['register'=>false]);
 
 Route::group(['middleware' => ['auth'],'prefix'=>'admin','namespace'=>'Admin'], function () {
     Route::get('dashboard', 'DashboardController@dashboard');
