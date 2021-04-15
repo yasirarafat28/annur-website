@@ -30,7 +30,7 @@ class FrontController extends Controller
         SEO::setDescription("Treatment for cerebral palsy can be complex, addressing a wide range of individual symptoms and conditions. As a result, doctors and medical specialists from multiple disciplines work together improving outcomes for children with CP. Early intervention and treatment have the greatest positive impact. ");
 
 
-        $galleries = Gallery::where('status','active')->orderBy('created_at','DESC')->take(3)->get();
+        $galleries = Gallery::where('status','active')->orderBy('created_at','DESC')->get();
         $blogs = Blog::where('status','active')->orderBy('created_at','DESC')->take(2)->get();
         $events = Event::where('status','active')->orderBy('created_at','DESC')->take(3)->get();
         $advertisment = Advertisement::where('status','active')->orderBy('created_at','DESC')->first();
