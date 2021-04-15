@@ -26,8 +26,8 @@ class FrontController extends Controller
 
         $homepage = 'yes';
 
-        SEO::setTitle("Home");
-        SEO::setDescription("Treatment for cerebral palsy can be complex, addressing a wide range of individual symptoms and conditions. As a result, doctors and medical specialists from multiple disciplines work together improving outcomes for children with CP. Early intervention and treatment have the greatest positive impact. ");
+        // SEO::setTitle("Home");
+        // SEO::setDescription("Treatment for cerebral palsy can be complex, addressing a wide range of individual symptoms and conditions. As a result, doctors and medical specialists from multiple disciplines work together improving outcomes for children with CP. Early intervention and treatment have the greatest positive impact. ");
 
 
         $galleries = Gallery::where('status','active')->orderBy('created_at','DESC')->get();
@@ -42,8 +42,8 @@ class FrontController extends Controller
 
     public function testimonials(){
 
-        SEO::setTitle("Happy Patients");
-        SEO::setDescription("Treatment for cerebral palsy can be complex, addressing a wide range of individual symptoms and conditions. As a result, doctors and medical specialists from multiple disciplines work together improving outcomes for children with CP. Early intervention and treatment have the greatest positive impact. ");
+        // SEO::setTitle("Happy Patients");
+        // SEO::setDescription("Treatment for cerebral palsy can be complex, addressing a wide range of individual symptoms and conditions. As a result, doctors and medical specialists from multiple disciplines work together improving outcomes for children with CP. Early intervention and treatment have the greatest positive impact. ");
 
 
 
@@ -61,8 +61,8 @@ class FrontController extends Controller
 
 
 
-        SEO::setTitle("Media Releases");
-        SEO::setDescription("Treatment for cerebral palsy can be complex, addressing a wide range of individual symptoms and conditions. As a result, doctors and medical specialists from multiple disciplines work together improving outcomes for children with CP. Early intervention and treatment have the greatest positive impact. ");
+        // SEO::setTitle("Media Releases");
+        // SEO::setDescription("Treatment for cerebral palsy can be complex, addressing a wide range of individual symptoms and conditions. As a result, doctors and medical specialists from multiple disciplines work together improving outcomes for children with CP. Early intervention and treatment have the greatest positive impact. ");
 
         $records = Media::where('status','active')->get();
         return view('media',compact('records'));
@@ -71,8 +71,8 @@ class FrontController extends Controller
     public function about_cp(){
 
 
-        SEO::setTitle("Cerebral Palsy Treatment");
-        SEO::setDescription("Treatment for cerebral palsy can be complex, addressing a wide range of individual symptoms and conditions. As a result, doctors and medical specialists from multiple disciplines work together improving outcomes for children with CP. Early intervention and treatment have the greatest positive impact. ");
+        // SEO::setTitle("Cerebral Palsy Treatment");
+        // SEO::setDescription("Treatment for cerebral palsy can be complex, addressing a wide range of individual symptoms and conditions. As a result, doctors and medical specialists from multiple disciplines work together improving outcomes for children with CP. Early intervention and treatment have the greatest positive impact. ");
 
         return view('about_cp');
     }
@@ -81,8 +81,8 @@ class FrontController extends Controller
 
 
 
-        SEO::setTitle("Contact Us");
-        SEO::setDescription("Treatment for cerebral palsy can be complex, addressing a wide range of individual symptoms and conditions. As a result, doctors and medical specialists from multiple disciplines work together improving outcomes for children with CP. Early intervention and treatment have the greatest positive impact. ");
+        // SEO::setTitle("Contact Us");
+        // SEO::setDescription("Treatment for cerebral palsy can be complex, addressing a wide range of individual symptoms and conditions. As a result, doctors and medical specialists from multiple disciplines work together improving outcomes for children with CP. Early intervention and treatment have the greatest positive impact. ");
 
         $contact = Contact::where('status','active')->orderBy('created_at','DESC')->first();
         return view('contact',compact('contact'));
@@ -131,8 +131,8 @@ class FrontController extends Controller
 
 
 
-        SEO::setTitle("About Us");
-        SEO::setDescription("Treatment for cerebral palsy can be complex, addressing a wide range of individual symptoms and conditions. As a result, doctors and medical specialists from multiple disciplines work together improving outcomes for children with CP. Early intervention and treatment have the greatest positive impact. ");
+        // SEO::setTitle("About Us");
+        // SEO::setDescription("Treatment for cerebral palsy can be complex, addressing a wide range of individual symptoms and conditions. As a result, doctors and medical specialists from multiple disciplines work together improving outcomes for children with CP. Early intervention and treatment have the greatest positive impact. ");
 
         $about = About::where('status','active')->orderBy('created_at','DESC')->first();
         return view('about-us',compact('about'));
