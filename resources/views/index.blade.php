@@ -462,7 +462,7 @@
                     <div class="single__news">
                         <div class="thumb">
                             <a href="{{url('/single-blog/'.$blog->id)}}">
-                                <img src="{{url($blog->photo)}}" alt="" style="width: 400px;">
+                                <img src="{{url($blog->photo??'')}}" alt="" style="width: 400px;">
                             </a>
                             <span class="badge"></span>
                         </div>
