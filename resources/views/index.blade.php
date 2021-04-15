@@ -62,7 +62,7 @@
         </div>
         <div class="col-md-2">
             <div class="center LandingPageTile" style="float: left;border: 1px solid #ddd;margin-left:10px;border-bottom: 10px solid #ddd; margin-bottom: 60px;">
-                <img style="height:345px;width:345px; margin-top:10px;margin-left:10px;margin-right:10px;margin-bottom: 10px;" src="{{url($advertisment->image)}}" onerror="this.src='/images/file/default-image.jpg';">
+                <img style="height:345px;width:345px; margin-top:10px;margin-left:10px;margin-right:10px;margin-bottom: 10px;" src="{{url($advertisment->image??"")}}" onerror="this.src='/images/file/default-image.jpg';">
 
             </div>
         </div>
@@ -521,7 +521,7 @@
                 <div class="col-md-3">
                     <div class="single__news">
                         <div class="thumb">
-                            <img src="{{url($album->image)}}" alt="" style="height:240px;">
+                            <img src="{{url($album->image??'')}}" alt="" style="height:240px;">
                         </div>
                         <div class="news_info">
                                 <h4>{{$album->title??'N/A'}}</h4>
